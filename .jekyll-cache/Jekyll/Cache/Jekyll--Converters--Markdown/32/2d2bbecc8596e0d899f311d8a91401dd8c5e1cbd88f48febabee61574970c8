@@ -1,0 +1,17 @@
+I"b<h1 id="jekyll初次使用体验">jekyll初次使用体验</h1>
+<blockquote>
+  <p>跟着网上的教程乱七八糟的，终于搭好了自己的博客。
+感谢少数派的教程，感谢jekyllThemes大佬们的贡献，
+感谢jekyll官网的文档指点。
+在本次搭建博客的过程中，遇到了几个比较坑的问题，
+附上问题和解决办法。</p>
+</blockquote>
+
+<p>###问题及解决办法</p>
+<blockquote>
+  <p>Q:jekyll command not find<br />
+A:参考jekyll官网，给出的解决方案是：<br />
+在终端环境配置文件中(example:zshrc)添加环境变量<br /></p>
+
+</blockquote>
+:ET
