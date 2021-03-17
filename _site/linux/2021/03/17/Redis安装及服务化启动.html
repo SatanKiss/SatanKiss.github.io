@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Lucifer" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Lucifer</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Lucifer</a>
+	</div>
+	<p class="lead">Themed by ejjoo</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#jekyll">
+				<span class="name">jekyll</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#update">
+				<span class="name">update</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#linux">
+				<span class="name">linux</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			Redis安装及服务化启动
+		</div>
+		<time class="post-date dt-published" datetime="2021-03-17T18:00:00+08:00" itemprop="datePublished">2021/03/17
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h1 id="撰写缘由">撰写缘由</h1>
+<blockquote>
+  <p>这几天在安装redis的时候碰上不少坑，基于问题解决一次到位的原则结合网上各路大神的帖子终于找出Redis安装和服务化启动的最优解，特此记录一下，以备不时之需。<br /></p>
+  <h1 id="note">Note</h1>
+  <p>本教程基于CentOS 7及以上版本安装，其他Linux发行版可以参考，未必当唯一标准进行指导。<br />
+话不多说，安装过程开始：</p>
+  <h3 id="step1-安装前准备工作">Step1 安装前准备工作</h3>
+  <p>由于笔者从一干二净的centOS Service无Gui版本开始进行安装，且以root身份登陆，故先安装编译必备的依赖make和gcc。<br />
+yum install make<br />
+yum install gcc<br />
+通过以上命令成功安装编译redis所需依赖，非root用户安装过程中可能存在yum提示权限不足，只需要在命令之前追加sudo即可。</p>
+  <h3 id="step2-redis安装包的下载解压及编译">Step2 Redis安装包的下载解压及编译</h3>
+  <p>参考Redis官网指导<a>https://redis.io/download</a> ，在linux终端中cd到你能记得住的一个文件夹下，最好是home文件夹下，然后执行相关命令，避免麻烦，贴上所需命令：<br />
+cd /home <br />
+wget https://download.redis.io/releases/redis-6.2.1.tar.gz <br />
+tar xzf redis-6.2.1.tar.gz <br />
+cd redis-6.2.1 <br />
+make <br />
+接下来就是终端执行编译过程，最终会在redis-6.2.1文件夹下生成src文件夹，在该文件夹中存在redis服务启动必备的一些文件。<br /></p>
+  <h3 id="step3-安装到指定位置">Step3 安装到指定位置</h3>
+  <p>参考博文<a>https://blog.csdn.net/simonforfuture/article/details/92801822</a>贴上如下命令<br />
+安装到/usr/local/redis目录下 <br />
+make PREFIX=/usr/local/redis install <br />
+拷贝配置文件
+cp redis.conf /usr/local/redis/ <br /></p>
+  <h3 id="note-1">Note</h3>
+  <p>如有特殊需求，可以对redis.conf 文件进行适当修改，例如daemonize、databases、port等。<br />
+如需启用客户端连接redis时的密码，取消requirepass foobared该行的注释，并将foobared改为自己所需要的密码。<br />
+如需启用日志文件，找到logfile “” 行并将其更改为logfile “redis.log” ，这样redis会在运行时会生成日志文件。<br />
+如需更改默认6379端口，只需要找到port 6379行并将6379改为你所需要的端口。<br /></p>
+  <h3 id="step4-服务化启动">Step4 服务化启动</h3>
+  <p>参考<a href="https://www.php.cn/redis/458172.html">redis如何设置开机自启动</a>该文章，并提出如下补充事项<br />
+note_1:redis_init_script文件在redis tar.gz包解压缩后的文件夹中。<br />
+note_2:由于上述操作已将redis安装至/usr/local/redis/路径之下，故脚本文件的编辑中应做如下修改：<br />
+在#!/bin/sh下添加如下两行<br />
+<code class="language-plaintext highlighter-rouge"># chkconfig: 2345 10 90</code> <br />
+<code class="language-plaintext highlighter-rouge"># description: Start and Stop redis</code><br />
+对照脚本文件中的内容，确保是下所示：<br />
+<code class="language-plaintext highlighter-rouge">REDISPORT=6379</code> 此处请和你redis.conf文件中的端口号相匹配。<br />
+<code class="language-plaintext highlighter-rouge">EXEC=/usr/local/redis/bin/redis-server</code><br />
+<code class="language-plaintext highlighter-rouge">CLIEXEC=/usr/local/redis/bin/redis-cli</code><br />
+<code class="language-plaintext highlighter-rouge">CONF="/usr/local/redis/redis.conf"</code><br />
+上述三行为你执行安装到指定目录后的redis相关文件路径，redis-server用于启动redis服务，redis-cli文件用于建立redis客户端连接，redis.conf是redis服务启动的配置文件。<br />
+将redis添加至开机自启动<br />
+chkconfig –add redis<br />
+chkconfig redis on<br />
+为确保redis启动，可继续执行如下命令<br />
+systemctl start redis <br /></p>
+  <h3 id="step5-重启并进行检查">Step5 重启并进行检查</h3>
+  <p>最后reboot你的Linux操作系统，启动后输入systemctl status redis命令查看redis是否开机自启动，当显示Active：active(running)时说明redis已经开机自启动。</p>
+  <h1 id="note-2">Note</h1>
+  <p>本次安装不足之处，redis-cli连接时需要进入到/usr/local/redis目录下，执行相关命令。若端口密码进行了修改，则进入redis安装目录下后，执行<code class="language-plaintext highlighter-rouge">./bin/redis-cli -p 你的端口号 -a 你的密码</code>进行连接，连接之后执行ping命令，若结果为PONG，说明正确连接redis服务。</p>
+</blockquote>
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>
