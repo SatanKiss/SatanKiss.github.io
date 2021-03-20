@@ -24,7 +24,7 @@ date_format: "%Y-%M-%D" //and date format.
 
 ### Screenshots
 #### Page
-![alt text](/public/img/screenshot-1.png)
+![text](/public/img/screenshot-1.png)
 #### Articles
 ![alt text](/public/img/screenshot-2.png)
 #### Page - Mobile
