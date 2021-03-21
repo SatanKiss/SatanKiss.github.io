@@ -96,27 +96,44 @@
 </div>
 		</div>
 		<div class="content">
-			<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			Github加速
+		</div>
+		<time class="post-date dt-published" datetime="2021-03-21T12:51:51+08:00" itemprop="datePublished">2021/03/21
+		</time>		
+	</header>
 
-<div class="container">
-  <h1>404</h1>
+	<div class="post-content">
+		<h3 id="撰写缘由">撰写缘由</h3>
+<blockquote>
+  <p>今天在迁移gitee项目至github的过程中，多次push报错Error443，故整合一下github加速访问的方法。结合网络上github加速的各种奇技淫巧，采用更改hosts文件的方法。<br /></p>
+  <h3 id="准备工作">准备工作</h3>
+  <ul>
+    <li>IP查询网站<a href="https://www.ipaddress.com/">IPAddress.com</a></li>
+    <li>要加速的内容
+      <ul>
+        <li>github.com</li>
+        <li>api.github.com</li>
+        <li>github.global.ssl.fastly.net</li>
+      </ul>
+    </li>
+    <li>要操作的文件
+hosts文件，windows操作系统上该文件在 <code class="language-plaintext highlighter-rouge">C:\WINDOWS\system32\drivers\etc</code>目录下，macOS操作系统在<code class="language-plaintext highlighter-rouge">/etc/</code>目录下，由于笔者采用的是macOS操作系统，故以macOS为例进行实操。
+      <h3 id="操作">操作</h3>
+      <p>在IPAddress.com网站中查询以上三个要映射的网站IP，笔者查出来的结果如下：<br />
+<code class="language-plaintext highlighter-rouge">140.82.114.4 github.com</code><br />
+<code class="language-plaintext highlighter-rouge">199.232.69.194 github.global.ssl.fastly.net</code> <br />
+<code class="language-plaintext highlighter-rouge">140.82.112.6 api.github.com</code><br />
+复制如上三行命令，在终端执行 <code class="language-plaintext highlighter-rouge">sudo nano /etc/hosts</code> ，输入自己的密码，追加在hosts文件内容底部。<br />
+最后执行刷新dns命令<code class="language-plaintext highlighter-rouge">sudo dscacheutil -flushcache</code>，windows命令为<code class="language-plaintext highlighter-rouge">ipconfig /flushdns</code></p>
+    </li>
+  </ul>
+</blockquote>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
-
+	</div>
+</article>
 		</div>
 	</div>
   </body>
