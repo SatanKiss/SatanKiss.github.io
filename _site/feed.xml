@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-03-21T19:32:44+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">Github加速</title><link href="http://sliencejoker.github.io/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F.html" rel="alternate" type="text/html" title="Github加速" /><published>2021-03-21T12:51:51+08:00</published><updated>2021-03-21T12:51:51+08:00</updated><id>http://sliencejoker.github.io/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F</id><content type="html" xml:base="http://sliencejoker.github.io/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-03-22T19:42:55+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">Windows使用技巧</title><link href="http://sliencejoker.github.io/windows/2021/03/22/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html" rel="alternate" type="text/html" title="Windows使用技巧" /><published>2021-03-22T16:00:00+08:00</published><updated>2021-03-22T16:00:00+08:00</updated><id>http://sliencejoker.github.io/windows/2021/03/22/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7</id><content type="html" xml:base="http://sliencejoker.github.io/windows/2021/03/22/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;作为一个不断折腾的伪开发人员，曾长期沉迷于Windows版本号的不断刷新，记得电脑买回来的时候预装的Windows操作系统是1607家庭版，先后在电脑上装过win7旗舰版、Ubuntu、Manjaro、Arch(伪)、macOS，win10专业版、win10专业工作站版、win10服务器版、win10预览版、RemixOS(电脑上刷安卓)，目前将macOS操作系统作为自己的主力开发。怀念那些年使用windows的日子，在此贡献上自己使用Windows的心得。&lt;/p&gt;
+
+  &lt;hr /&gt;
+  &lt;h4 id=&quot;作为普通用户使用windows的需求&quot;&gt;作为普通用户使用Windows的需求&lt;/h4&gt;
+  &lt;p&gt;作为普通用户，我们都很讨厌win下乱七八糟的广告和弹窗，同时2345全家桶、360全家桶、腾讯全家桶以及古老年代的金山全家桶大幅度拖垮了用户体验。在广告弹窗方面，我们不得不感谢重橙网络科技公司代理的国内adobe flash player，正是他们的不懈努力，让广告弹窗防不胜防。大多数普通用户的需求是什么，不外就是浏览网页、看个视频、用Office办个公、听个歌，QQ、微信、钉钉必备，同时加上腾讯视频、爱奇艺视频、百度网盘这些常用软件，以及必备的下载软件、系统垃圾清理软件。接下来，开始提升win的使用体验。Let’s Go！。&lt;/p&gt;
+  &lt;h4 id=&quot;win软件推荐&quot;&gt;win软件推荐&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;解压缩类软件
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;https://dl.bandisoft.com/bandizip.old/BANDIZIP6-SETUP.EXE?2&quot;&gt;Bandizip 6.29版本&lt;/a&gt;该版本是Bandizip6系列最后一版，无广告投放，设计感挺切合Win10界面，同时可由用户自主决定是否更新。友情提醒：7系列版本免费版有广告，商业版无广告但收费。单击蓝色部分即可直接下载。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;视频类软件
+      &lt;ul&gt;
+        &lt;li&gt;腾讯视频or爱奇艺视频二选一，鉴于鹅厂和爱奇艺不断薅羊毛的趋势，以及未经用户许可挂后台疯狂上传流量，更推荐用网页观看视频。再说了，年轻人，哔哩哔哩它不香吗。&lt;/li&gt;
+        &lt;li&gt;PotPlayer，我愿称之为win下最强的本地播放器。网上绿色版魔改版一丢丢，甚至可以用它来看电视频道。有条件的请去官网&lt;a&gt;http://potplayer.daum.net/&lt;/a&gt;下载，无条件的请选择国内网址&lt;a&gt;http://www.potplayercn.com/&lt;/a&gt;下载，不保证其安全和纯净。详细教程请参考 &lt;a href=&quot;https://post.smzdm.com/p/av7k34qm/&quot;&gt;如何将PotPlayer折腾成在线直播平台、看电视…？(内附美化教程)&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;干掉flash
+      &lt;ul&gt;
+        &lt;li&gt;话说天朝苦flash久已，微软推出了干掉flash的补丁，这个补丁是KB4577586，下载地址为&lt;a href=&quot;https://www.catalog.update.microsoft.com/Search.aspx?q=KB4577586&quot;&gt;https://www.catalog.update.microsoft.com/Search.aspx?q=KB4577586&lt;/a&gt;支持的版本包括：Windows 10 v1507、v1607、v1703、v1709、v1803、v1809、v1903、v1909、v2004等。请注意：Windows 10 v1909 及后续版本请在补丁下载页点击右上角翻页 ，这些补丁在第二页才可以看到下载。
+其他受支持的版本：Windows 8嵌入式标准版、Windows8.1、Server 2012~2019版、LTSB/C 2015~2019版。&lt;br /&gt;
+以上内容来源于 &lt;a href=&quot;https://www.landiannews.com/archives/81276.html&quot;&gt;蓝点网&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;干掉流氓软件的安装
+      &lt;ul&gt;
+        &lt;li&gt;该方式是在win下屏蔽流氓系列软件的证书，以便屏蔽掉在电脑上运行的流氓软件，有效方式取决于github作者的更新和流氓软件对证书的更新，github项目地址放上：&lt;a href=&quot;https://github.com/sharoue/chinawareblock&quot;&gt;https://github.com/sharoue/chinawareblock&lt;/a&gt;，我们只需要下载下来解压进入一键屏蔽软件文件夹，查看操作说明执行即可。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;办公类软件
+      &lt;ul&gt;
+        &lt;li&gt;大名鼎鼎的Office，可以用OTP(&lt;a href=&quot;https://otp.landian.vip/zh-cn/&quot;&gt;Office Tools Plus&lt;/a&gt;)进行Office的部署和安装。&lt;/li&gt;
+        &lt;li&gt;替代软件WPS，鉴于中美关系形势和国家对国产软件的大力支持，WPS也可以作为国内非折腾用户的首选，毕竟NCRE全国计算机等级考试已经将WPS列入考试目录。附上WPS官网：&lt;a href=&quot;https://www.wps.cn/&quot;&gt;https://www.wps.cn/&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;XMind，思维导图类，懂得都懂，用这个做项目前期的准备工作真是爽的不要不要的。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;体验提升类软件
+      &lt;ul&gt;
+        &lt;li&gt;截屏软件Snipaste，推荐直接在win自带的应用商店下载。&lt;/li&gt;
+        &lt;li&gt;状态栏透明软件TranslucentTB，推荐直接在win自带的应用软件下载。毕竟win下好容易挑一张好看的壁纸，结果下方状态栏不透明，要多影响观感就有多影响。&lt;/li&gt;
+        &lt;li&gt;视频桌面不得不提米哈游的哟哟鹿鸣，B站官方号发的视频下一大堆LSP，足够舔屏。附官网下载链接：&lt;a href=&quot;https://n0va.mihoyo.com&quot;&gt;https://n0va.mihoyo.com&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;杀毒类软件
+      &lt;ul&gt;
+        &lt;li&gt;win自带的defender让人又爱又恨，市面上大多数安利火绒杀毒，其实腾讯电脑管家的国际版也不逊色，毕竟大厂品牌加持，也是安静的杀毒软件，英文界面可能会造成一定的使用障碍，附链接地址：&lt;a href=&quot;https://www.pcmgr-global.com/&quot;&gt;https://www.pcmgr-global.com/&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;浏览器
+      &lt;ul&gt;
+        &lt;li&gt;Chrome这个就不用多说了，缺陷在于普通用户的需要科学上网以便实现同步。&lt;/li&gt;
+        &lt;li&gt;Edge，微软抛弃了IE后的新作，实质是使用了Chromium的内核，相较于Chrome来讲，同步功能体验友好。附下载链接：&lt;a href=&quot;https://www.microsoft.com/zh-cn/edge&quot;&gt;https://www.microsoft.com/zh-cn/edge&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Firefox火狐浏览器，反正火狐和Chrome打了好多年，一个地球最强浏览器一个宇宙最强浏览器，火狐的彩蛋Mozilla之书还蛮让人期待。附上真正的firefox下载地址：&lt;a href=&quot;https://www.mozilla.org/zh-CN/firefox/new/?redirect_source=firefox-com&quot;&gt;https://www.mozilla.org/zh-CN/firefox/new/?redirect_source=firefox-com&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;系统工具类软件
+      &lt;ul&gt;
+        &lt;li&gt;DISM++ 天下第一，清理垃圾何必要下什么电脑管家，DISM++就可以了。附 &lt;a href=&quot;https://www.chuyu.me/zh-Hans/index.html&quot;&gt;官网&lt;/a&gt; ，同时DISM++官方QQ群日常吹水，日常踢红包挂。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;听歌软件
+      &lt;ul&gt;
+        &lt;li&gt;国内基本就是QQ音乐、网易云音乐、酷狗音乐、酷我音乐这些软件了，有条件的自行考虑Spotify。注意安装过程中谨慎点击，避免一招不慎全家桶伺候。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;游戏软件
+      &lt;ul&gt;
+        &lt;li&gt;WeGame游戏平台(这就不用我多说什么了)&lt;/li&gt;
+        &lt;li&gt;Steam(笔者在Steam上买了神力科莎，没钱买豪车起码可以在游戏世界体验豪车，就是后续的配套设备方向盘子座椅什么的支出比较大，当然相较于一辆车而言还是很便宜的。)&lt;/li&gt;
+        &lt;li&gt;Epic(游戏界的拼多多，果然人类的本质是白嫖，白嫖使我快乐，我貌似白嫖到了特洛伊？)&lt;/li&gt;
+        &lt;li&gt;育碧(巴黎圣母院意外着火损失后的最大赢家，刺客信条系列某版完美复刻了巴黎圣母院，同时巴黎圣母院的失火事件压下去了国内关于996的争论。)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;远程协助类软件
+      &lt;ul&gt;
+        &lt;li&gt;Teamviewer，免费版的可以远程连接半个小时(如果我没记错的话)，当然这玩意绿色版的也不少，各位大佬自行去找。反正随着这个软件的更新越来越难用了，限制条件蛮多。如果用官方最新版，貌似还要注册账号什么的。&lt;/li&gt;
+        &lt;li&gt;向日葵，没用过，不做评价，但是经常能刷出来关于向日葵的文章。&lt;/li&gt;
+        &lt;li&gt;瞩目，同样的远程协助，笔者知道这个软件还是机缘巧合，参与某次面试的时候面试方提醒的要求下载。&lt;/li&gt;
+        &lt;li&gt;DeskTopShare，笔者在培训机构学习的时候用到，讲师用这个软件开屏幕共享。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Other
+      &lt;ul&gt;
+        &lt;li&gt;QQ&lt;/li&gt;
+        &lt;li&gt;微信(扫码登陆就很难受)&lt;/li&gt;
+        &lt;li&gt;钉钉(钉三多蛮好玩的，感兴趣可以逛逛B站官方号，这只蝙蝠承受了太多它不该承受的)&lt;/li&gt;
+        &lt;li&gt;百度网盘(百度网盘国际版叫DuBox，听说下载速度芜湖起飞，国内普通用户使用难度芜湖起飞)&lt;/li&gt;
+        &lt;li&gt;阿里云盘(听说百度网盘知道后感觉自己的地位受到挑战然后疯狂送福利)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;下载类软件
+      &lt;ul&gt;
+        &lt;li&gt;安利一下Motrix，可以在某种程度上替代迅雷。Motrix官网： &lt;a&gt;https://motrix.app&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;hr /&gt;
+  &lt;h3 id=&quot;终&quot;&gt;终&lt;/h3&gt;
+  &lt;p&gt;希望本文能对你有所帮助。其实现有的条件下我们作为普通用户，电脑性能或多或少都存在过剩问题，保持良好的使用习惯，你会发现，windows调教好了用起来也是爽的一批。&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="Windows" /><summary type="html">撰写缘由 作为一个不断折腾的伪开发人员，曾长期沉迷于Windows版本号的不断刷新，记得电脑买回来的时候预装的Windows操作系统是1607家庭版，先后在电脑上装过win7旗舰版、Ubuntu、Manjaro、Arch(伪)、macOS，win10专业版、win10专业工作站版、win10服务器版、win10预览版、RemixOS(电脑上刷安卓)，目前将macOS操作系统作为自己的主力开发。怀念那些年使用windows的日子，在此贡献上自己使用Windows的心得。 作为普通用户使用Windows的需求 作为普通用户，我们都很讨厌win下乱七八糟的广告和弹窗，同时2345全家桶、360全家桶、腾讯全家桶以及古老年代的金山全家桶大幅度拖垮了用户体验。在广告弹窗方面，我们不得不感谢重橙网络科技公司代理的国内adobe flash player，正是他们的不懈努力，让广告弹窗防不胜防。大多数普通用户的需求是什么，不外就是浏览网页、看个视频、用Office办个公、听个歌，QQ、微信、钉钉必备，同时加上腾讯视频、爱奇艺视频、百度网盘这些常用软件，以及必备的下载软件、系统垃圾清理软件。接下来，开始提升win的使用体验。Let’s Go！。 win软件推荐 解压缩类软件 Bandizip 6.29版本该版本是Bandizip6系列最后一版，无广告投放，设计感挺切合Win10界面，同时可由用户自主决定是否更新。友情提醒：7系列版本免费版有广告，商业版无广告但收费。单击蓝色部分即可直接下载。 视频类软件 腾讯视频or爱奇艺视频二选一，鉴于鹅厂和爱奇艺不断薅羊毛的趋势，以及未经用户许可挂后台疯狂上传流量，更推荐用网页观看视频。再说了，年轻人，哔哩哔哩它不香吗。 PotPlayer，我愿称之为win下最强的本地播放器。网上绿色版魔改版一丢丢，甚至可以用它来看电视频道。有条件的请去官网http://potplayer.daum.net/下载，无条件的请选择国内网址http://www.potplayercn.com/下载，不保证其安全和纯净。详细教程请参考 如何将PotPlayer折腾成在线直播平台、看电视…？(内附美化教程) 干掉flash 话说天朝苦flash久已，微软推出了干掉flash的补丁，这个补丁是KB4577586，下载地址为https://www.catalog.update.microsoft.com/Search.aspx?q=KB4577586支持的版本包括：Windows 10 v1507、v1607、v1703、v1709、v1803、v1809、v1903、v1909、v2004等。请注意：Windows 10 v1909 及后续版本请在补丁下载页点击右上角翻页 ，这些补丁在第二页才可以看到下载。 其他受支持的版本：Windows 8嵌入式标准版、Windows8.1、Server 2012~2019版、LTSB/C 2015~2019版。 以上内容来源于 蓝点网 干掉流氓软件的安装 该方式是在win下屏蔽流氓系列软件的证书，以便屏蔽掉在电脑上运行的流氓软件，有效方式取决于github作者的更新和流氓软件对证书的更新，github项目地址放上：https://github.com/sharoue/chinawareblock，我们只需要下载下来解压进入一键屏蔽软件文件夹，查看操作说明执行即可。 办公类软件 大名鼎鼎的Office，可以用OTP(Office Tools Plus)进行Office的部署和安装。 替代软件WPS，鉴于中美关系形势和国家对国产软件的大力支持，WPS也可以作为国内非折腾用户的首选，毕竟NCRE全国计算机等级考试已经将WPS列入考试目录。附上WPS官网：https://www.wps.cn/ XMind，思维导图类，懂得都懂，用这个做项目前期的准备工作真是爽的不要不要的。 体验提升类软件 截屏软件Snipaste，推荐直接在win自带的应用商店下载。 状态栏透明软件TranslucentTB，推荐直接在win自带的应用软件下载。毕竟win下好容易挑一张好看的壁纸，结果下方状态栏不透明，要多影响观感就有多影响。 视频桌面不得不提米哈游的哟哟鹿鸣，B站官方号发的视频下一大堆LSP，足够舔屏。附官网下载链接：https://n0va.mihoyo.com 杀毒类软件 win自带的defender让人又爱又恨，市面上大多数安利火绒杀毒，其实腾讯电脑管家的国际版也不逊色，毕竟大厂品牌加持，也是安静的杀毒软件，英文界面可能会造成一定的使用障碍，附链接地址：https://www.pcmgr-global.com/ 浏览器 Chrome这个就不用多说了，缺陷在于普通用户的需要科学上网以便实现同步。 Edge，微软抛弃了IE后的新作，实质是使用了Chromium的内核，相较于Chrome来讲，同步功能体验友好。附下载链接：https://www.microsoft.com/zh-cn/edge Firefox火狐浏览器，反正火狐和Chrome打了好多年，一个地球最强浏览器一个宇宙最强浏览器，火狐的彩蛋Mozilla之书还蛮让人期待。附上真正的firefox下载地址：https://www.mozilla.org/zh-CN/firefox/new/?redirect_source=firefox-com 系统工具类软件 DISM++ 天下第一，清理垃圾何必要下什么电脑管家，DISM++就可以了。附 官网 ，同时DISM++官方QQ群日常吹水，日常踢红包挂。 听歌软件 国内基本就是QQ音乐、网易云音乐、酷狗音乐、酷我音乐这些软件了，有条件的自行考虑Spotify。注意安装过程中谨慎点击，避免一招不慎全家桶伺候。 游戏软件 WeGame游戏平台(这就不用我多说什么了) Steam(笔者在Steam上买了神力科莎，没钱买豪车起码可以在游戏世界体验豪车，就是后续的配套设备方向盘子座椅什么的支出比较大，当然相较于一辆车而言还是很便宜的。) Epic(游戏界的拼多多，果然人类的本质是白嫖，白嫖使我快乐，我貌似白嫖到了特洛伊？) 育碧(巴黎圣母院意外着火损失后的最大赢家，刺客信条系列某版完美复刻了巴黎圣母院，同时巴黎圣母院的失火事件压下去了国内关于996的争论。) 远程协助类软件 Teamviewer，免费版的可以远程连接半个小时(如果我没记错的话)，当然这玩意绿色版的也不少，各位大佬自行去找。反正随着这个软件的更新越来越难用了，限制条件蛮多。如果用官方最新版，貌似还要注册账号什么的。 向日葵，没用过，不做评价，但是经常能刷出来关于向日葵的文章。 瞩目，同样的远程协助，笔者知道这个软件还是机缘巧合，参与某次面试的时候面试方提醒的要求下载。 DeskTopShare，笔者在培训机构学习的时候用到，讲师用这个软件开屏幕共享。 Other QQ 微信(扫码登陆就很难受) 钉钉(钉三多蛮好玩的，感兴趣可以逛逛B站官方号，这只蝙蝠承受了太多它不该承受的) 百度网盘(百度网盘国际版叫DuBox，听说下载速度芜湖起飞，国内普通用户使用难度芜湖起飞) 阿里云盘(听说百度网盘知道后感觉自己的地位受到挑战然后疯狂送福利) 下载类软件 安利一下Motrix，可以在某种程度上替代迅雷。Motrix官网： https://motrix.app 终 希望本文能对你有所帮助。其实现有的条件下我们作为普通用户，电脑性能或多或少都存在过剩问题，保持良好的使用习惯，你会发现，windows调教好了用起来也是爽的一批。</summary></entry><entry><title type="html">Github加速</title><link href="http://sliencejoker.github.io/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F.html" rel="alternate" type="text/html" title="Github加速" /><published>2021-03-21T12:51:51+08:00</published><updated>2021-03-21T12:51:51+08:00</updated><id>http://sliencejoker.github.io/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F</id><content type="html" xml:base="http://sliencejoker.github.io/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;今天在迁移gitee项目至github的过程中，多次push报错Error443，故整合一下github加速访问的方法。结合网络上github加速的各种奇技淫巧，采用更改hosts文件的方法。&lt;br /&gt;&lt;/p&gt;
   &lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
@@ -46,7 +149,7 @@ hosts文件，windows操作系统上该文件在 &lt;code class=&quot;language-p
 &lt;blockquote&gt;
   &lt;h4 id=&quot;项目经历&quot;&gt;项目经历&lt;/h4&gt;
   &lt;ul&gt;
-    &lt;li&gt;2020-07 至今 这是一段毫无意义的文字，但是为了不影响大家阅读
+    &lt;li&gt;2020-07 至今 
 2014-03 至 2015-06 这是一段毫无意义的文字，但是为了不影响大家阅读&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
