@@ -1,4 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-03-24T13:47:59+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">米6钉子户的自我修养</title><link href="http://sliencejoker.github.io/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB.html" rel="alternate" type="text/html" title="米6钉子户的自我修养" /><published>2021-03-24T00:00:00+08:00</published><updated>2021-03-24T00:00:00+08:00</updated><id>http://sliencejoker.github.io/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB</id><content type="html" xml:base="http://sliencejoker.github.io/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-03-24T21:46:23+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">简单介绍常见分区格式</title><link href="http://sliencejoker.github.io/tips/2021/03/24/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html" rel="alternate" type="text/html" title="简单介绍常见分区格式" /><published>2021-03-24T19:50:00+08:00</published><updated>2021-03-24T19:50:00+08:00</updated><id>http://sliencejoker.github.io/tips/2021/03/24/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F</id><content type="html" xml:base="http://sliencejoker.github.io/tips/2021/03/24/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;2020年7月份至今，在培训班学习技术期间，先后
+在当地买了32G的金士顿U盘，在二手鱼市场上买
+了2T的扩容盘，后经翻找各种技术贴将二手鱼淘来的
+U盘恢复到正常容量。由于目前用MacOS作为主力开发，
+有一个U盘连接电脑时提示无法识别，需格式化，面对繁杂的
+格式化选项，对分区格式化有了那么一点点小兴趣，
+故此简单介绍一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;常见分区格式&quot;&gt;常见分区格式&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;移动端(此处主要指手机、U盘)
+      &lt;ul&gt;
+        &lt;li&gt;EXT4 手机常用格式，同时也是Linux操作系统的主格式&lt;/li&gt;
+        &lt;li&gt;f2fs 作为后起之秀，一度成为不少手机的卖点。&lt;/li&gt;
+        &lt;li&gt;ExFAT 相较于FAT32，打破传输不能超过4G的限制。&lt;/li&gt;
+        &lt;li&gt;MS-DOS(FAT)，能支持最大为2GB的硬盘分区。&lt;/li&gt;
+        &lt;li&gt;FAT32 不支持超过4G以上文件大小的传输。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;PC端(个人电脑)
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/ntfs&quot;&gt;NTFS&lt;/a&gt; 最常见&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/ReFS&quot;&gt;ReFS&lt;/a&gt; Windows服务器用&lt;/li&gt;
+        &lt;li&gt;APFS&lt;/li&gt;
+        &lt;li&gt;Mac OS扩展 安装黑苹果时用，会在安装过程中将分区转为APFS&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;特别说明：加密更安全，可能会降低性能表现，默认不区分大小写，在不区分大小写的情况下Mac可以
+装Adobe全家桶系列，可以装Steam等不区分大小写的软件，区分大小写后主力开发写代码和办公是没问题的。
+      &lt;ul&gt;
+        &lt;li&gt;Linux 更多详情请移步 &lt;a href=&quot;https://wiki.archlinux.org/index.php/File_systems&quot;&gt;ArchWiki&lt;/a&gt; 查看&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;终&quot;&gt;终&lt;/h1&gt;</content><author><name></name></author><category term="tips" /><summary type="html">撰写缘由 2020年7月份至今，在培训班学习技术期间，先后 在当地买了32G的金士顿U盘，在二手鱼市场上买 了2T的扩容盘，后经翻找各种技术贴将二手鱼淘来的 U盘恢复到正常容量。由于目前用MacOS作为主力开发， 有一个U盘连接电脑时提示无法识别，需格式化，面对繁杂的 格式化选项，对分区格式化有了那么一点点小兴趣， 故此简单介绍一下。</summary></entry><entry><title type="html">米6钉子户的自我修养</title><link href="http://sliencejoker.github.io/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB.html" rel="alternate" type="text/html" title="米6钉子户的自我修养" /><published>2021-03-24T00:00:00+08:00</published><updated>2021-03-24T00:00:00+08:00</updated><id>http://sliencejoker.github.io/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB</id><content type="html" xml:base="http://sliencejoker.github.io/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;835永远的神，起因很简单，一个死党给我发来消息，说米6安兔兔跑分30万，要知道这可是过气旗舰了，2017年的手机，搁现在2021年也有快四年了，一众网友调侃的新三年，旧三年，缝缝补补又年的旧三年已经过去，而小米6仍然被众多爱好者拥簇。而笔者趁机也对自己的小米6跑了一下分，安兔兔跑分总分252724，安兔兔AI评测跑分56258。对照安兔兔排行榜上的27W分，和死党秀给我的30W分，不好意思，我手机丢小米6的脸了。撰写缘由一句话概括就是由一次炫耀行为引起的文章更新。&lt;/p&gt;
   &lt;h4 id=&quot;手机调教&quot;&gt;手机调教&lt;/h4&gt;
@@ -243,10 +286,10 @@ hosts文件，windows操作系统上该文件在 &lt;code class=&quot;language-p
 &lt;blockquote&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      &lt;h4 id=&quot;教育经历2016-09-至-2020-07-武汉纺织大学--管理学院-市场营销-&quot;&gt;教育经历：&lt;em&gt;2016-09 至 2020-07 &lt;a href=&quot;https://www.wtu.edu.cn/&quot;&gt;武汉纺织大学&lt;/a&gt;  &lt;a href=&quot;http://em.wtu.edu.cn/&quot;&gt;管理学院&lt;/a&gt; &lt;a href=&quot;http://em.wtu.edu.cn/info/1005/1018.htm&quot;&gt;市场营销&lt;/a&gt;&lt;/em&gt; &lt;br /&gt;&lt;/h4&gt;
+      &lt;h4 id=&quot;教育经历2016-09-至-2020-07-武汉纺织大学--管理学院-市场营销-&quot;&gt;教育经历：2016-09 至 2020-07 &lt;a href=&quot;https://www.wtu.edu.cn/&quot;&gt;武汉纺织大学&lt;/a&gt;  &lt;a href=&quot;http://em.wtu.edu.cn/&quot;&gt;管理学院&lt;/a&gt; &lt;a href=&quot;http://em.wtu.edu.cn/info/1005/1018.htm&quot;&gt;市场营销&lt;/a&gt; &lt;br /&gt;&lt;/h4&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;h4 id=&quot;相关技能java--html--mysql--office办公软件--xmind--linux--axure-rp--idea--eclipse--vscode&quot;&gt;相关技能：&lt;em&gt;Java &amp;amp; HTML &amp;amp; MySQL | Office办公软件 | XMind &amp;amp; Linux | Axure RP | IDEA &amp;amp; Eclipse &amp;amp; VSCode&lt;/em&gt;&lt;/h4&gt;
+      &lt;h4 id=&quot;相关技能java--html--mysql--office办公软件--xmind--linux--axure-rp--idea--eclipse--vscode--markdown&quot;&gt;相关技能：Java &amp;amp; HTML &amp;amp; MySQL | Office办公软件 | XMind &amp;amp; Linux | Axure RP | IDEA &amp;amp; Eclipse &amp;amp; VSCode | Markdown&lt;/h4&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
@@ -257,6 +300,7 @@ hosts文件，windows操作系统上该文件在 &lt;code class=&quot;language-p
   &lt;ul&gt;
     &lt;li&gt;2020-07 至今 
 2014-03 至 2015-06 这是一段毫无意义的文字，但是为了不影响大家阅读&lt;/li&gt;
+    &lt;li&gt;2021-03 至今，开通GitHubPage并日常维护，记录心得，提升自身技术底蕴。&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 

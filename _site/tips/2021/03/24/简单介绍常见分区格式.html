@@ -111,53 +111,62 @@
 		</div>
 		<div class="content">
 			<article class="post">
-  <header class="post-header home">
-    <div class="post-title">Articles</div>
-  </header>
+	<header class="post-header">
+		<div class="post-title"> 
+			简单介绍常见分区格式
+		</div>
+		<time class="post-date dt-published" datetime="2021-03-24T19:50:00+08:00" itemprop="datePublished">2021/03/24
+		</time>		
+	</header>
 
-  <div class="post-content"><ul class="post-list"><li class="post-list-item">
-        <!----><span class="post-date">2021/03/24</span>
-      	<a class="post-link" href="/tips/2021/03/24/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html">
-    	    简单介绍常见分区格式
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/24</span>
-      	<a class="post-link" href="/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB.html">
-    	    米6钉子户的自我修养
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/22</span>
-      	<a class="post-link" href="/windows/2021/03/22/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html">
-    	    Windows使用技巧
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/21</span>
-      	<a class="post-link" href="/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F.html">
-    	    Github加速
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/20</span>
-      	<a class="post-link" href="/resume/2021/03/20/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86.html">
-    	    贾志楷的个人简历
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/20</span>
-      	<a class="post-link" href="/linux/2021/03/20/%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AAweb%E9%A1%B9%E7%9B%AE.html">
-    	    如何部署一个项目
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/17</span>
-      	<a class="post-link" href="/linux/2021/03/17/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E6%9C%8D%E5%8A%A1%E5%8C%96%E5%90%AF%E5%8A%A8.html">
-    	    Redis安装及服务化启动
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/16</span>
-      	<a class="post-link" href="/jekyll/2021/03/16/my-first-post.html">
-    	    my-first-post
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2020/01/02</span>
-      	<a class="post-link" href="/jekyll/update/2020/01/02/welcome-to-jekyll.html">
-    	    Welcome to Jekyll!
-		</a></li></ul></div>
+	<div class="post-content">
+		<h3 id="撰写缘由">撰写缘由</h3>
+<blockquote>
+  <p>2020年7月份至今，在培训班学习技术期间，先后
+在当地买了32G的金士顿U盘，在二手鱼市场上买
+了2T的扩容盘，后经翻找各种技术贴将二手鱼淘来的
+U盘恢复到正常容量。由于目前用MacOS作为主力开发，
+有一个U盘连接电脑时提示无法识别，需格式化，面对繁杂的
+格式化选项，对分区格式化有了那么一点点小兴趣，
+故此简单介绍一下。</p>
+</blockquote>
+
+<hr />
+
+<h3 id="常见分区格式">常见分区格式</h3>
+<blockquote>
+  <ul>
+    <li>移动端(此处主要指手机、U盘)
+      <ul>
+        <li>EXT4 手机常用格式，同时也是Linux操作系统的主格式</li>
+        <li>f2fs 作为后起之秀，一度成为不少手机的卖点。</li>
+        <li>ExFAT 相较于FAT32，打破传输不能超过4G的限制。</li>
+        <li>MS-DOS(FAT)，能支持最大为2GB的硬盘分区。</li>
+        <li>FAT32 不支持超过4G以上文件大小的传输。</li>
+      </ul>
+    </li>
+    <li>PC端(个人电脑)
+      <ul>
+        <li><a href="https://baike.baidu.com/item/ntfs">NTFS</a> 最常见</li>
+        <li><a href="https://baike.baidu.com/item/ReFS">ReFS</a> Windows服务器用</li>
+        <li>APFS</li>
+        <li>Mac OS扩展 安装黑苹果时用，会在安装过程中将分区转为APFS</li>
+      </ul>
+    </li>
+    <li>特别说明：加密更安全，可能会降低性能表现，默认不区分大小写，在不区分大小写的情况下Mac可以
+装Adobe全家桶系列，可以装Steam等不区分大小写的软件，区分大小写后主力开发写代码和办公是没问题的。
+      <ul>
+        <li>Linux 更多详情请移步 <a href="https://wiki.archlinux.org/index.php/File_systems">ArchWiki</a> 查看</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+<h1 id="终">终</h1>
+
+	</div>
 </article>
-
-
-
-</div>
-
 		</div>
 	</div>
   </body>
