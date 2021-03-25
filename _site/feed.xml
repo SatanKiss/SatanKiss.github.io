@@ -1,4 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-03-25T12:11:53+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">简单介绍常见分区格式</title><link href="http://sliencejoker.github.io/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html" rel="alternate" type="text/html" title="简单介绍常见分区格式" /><published>2021-03-25T11:09:00+08:00</published><updated>2021-03-25T11:09:00+08:00</updated><id>http://sliencejoker.github.io/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F</id><content type="html" xml:base="http://sliencejoker.github.io/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-03-25T21:49:19+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">Spring学习之AOP</title><link href="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html" rel="alternate" type="text/html" title="Spring学习之AOP" /><published>2021-03-25T18:48:00+08:00</published><updated>2021-03-25T18:48:00+08:00</updated><id>http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP</id><content type="html" xml:base="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这两天在学Spring，关于AOP的学习上遇到了争论，差点打起来(笑)。故此记录一下。话不多说，进入正文。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Q1:什么是SpringAOP？
+      &lt;ul&gt;
+        &lt;li&gt;A:说的简单点就是面向切面编程。对照Spring的官方文档，官方是这么解释的：&lt;br /&gt;
+官方说AOP(面向切面编程)是对OOP(面向对象编程)的补充，有别于我们过去在OOP中对类的模块化，AOP是对切面的模块化。AOP是Spring的关键组件之一，IOC容器不依赖于AOP，你爱用不用，但是AOP是对SpringIOC的强大补充，提供了一个非常强大的中间件解决方案。(潜台词是我这么优秀，多用用)。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Q2：AOP的五大通知类型有哪些？
+      &lt;ul&gt;
+        &lt;li&gt;A：先贴上官方的一段文字，如下所示：
+          &lt;ul&gt;
+            &lt;li&gt;Before advice: Advice that runs before a join point but that does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).&lt;/li&gt;
+            &lt;li&gt;After returning advice: Advice to be run after a join point completes normally (for example, if a method returns without throwing an exception).&lt;/li&gt;
+            &lt;li&gt;After throwing advice: Advice to be run if a method exits by throwing an exception.&lt;/li&gt;
+            &lt;li&gt;After &lt;span style=&quot;color:red;&quot;&gt;(&lt;strong&gt;finally&lt;/strong&gt;)&lt;/span&gt; advice: Advice to be run regardless of the means by which a join point exits (normal or exceptional return).&lt;/li&gt;
+            &lt;li&gt;Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception.&lt;br /&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;A2: 简单说就是Before、After returning、After throwing、After、Around。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Q3: 为什么能差点干起来？
+      &lt;ul&gt;
+        &lt;li&gt;A:我们看上文，AOP的五大通知类型，其中After就占3样，Before和Around都没啥争议，焦点就在这个After里。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Q4：3种After的区别是什么？
+      &lt;ul&gt;
+        &lt;li&gt;A: 在讲解过程中老师是这么说的，他将After returning 解释为返回后通知，返回数据后执行；将After throwing 解释为后置通知，抛出异常后通知；将After解释为后置通知，方法执行后执行。争论焦点就在于这三种After的执行先后顺序。经过进一步的验证得知，After throwing方法只有在有异常的时候会执行，故不再提。当用注解方式执行AOP操作的话，After returning执行要早于After。类似代码如下：&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nd&quot;&gt;@After&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;execution(* com.yiyun..*Service.*(..))&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doAfter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;JoinPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joinPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;执行doAfter&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@AfterReturning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;execution(* com.yiyun..*Service.*(..))&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;doAfterReturning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;JoinPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;joinPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;doAfterReturning&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;程序运行结果如下：
+      &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;doAfterReturning&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;执行doAfter&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+      &lt;p&gt;而当我们使用AOP的XML配置式执行时，After和After returning取决于你在配置文件中的先后顺序。换言之，当你使用XML配置式使用AOP框架时，你想让After先执行就把它配在前面，你想让它后执行就配在后面。
+如下所示配置：&lt;/p&gt;
+      &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!--返回后通知 方法执行完毕后执行--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;aop:after-returning&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;doAfterReturning&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;returning=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ret&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;pointcut-ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pointcut&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;c&quot;&gt;&amp;lt;!--后置通知 方法执行后执行--&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;aop:after&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;doAfter&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;pointcut-ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pointcut&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+      &lt;p&gt;这种配置说明当切面同时存在after和after-returning方法是，最后执行After方法，如果将after方法配置在after-returning方法之前，则先执行after后执行after-returning。&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;其实仔细看官方文档的话我们会发现官方在AOP的五种通知中给After特别加上了(finally)。原来官方早已看穿了这一切。&lt;br /&gt;
+培训老师指出，在工作中，看具体应用场景，在AOP中应用最多的是Around方法，在around方法中，我们可以较为方便的插入切面方法运行前、后、异常时的代码块，使用比较灵活。
+&lt;span style=&quot;display:block;text-align:right;color:black;&quot;&gt; &lt;strong&gt;终&lt;/strong&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="java" /><summary type="html">撰写缘由 这两天在学Spring，关于AOP的学习上遇到了争论，差点打起来(笑)。故此记录一下。话不多说，进入正文。</summary></entry><entry><title type="html">简单介绍常见分区格式</title><link href="http://sliencejoker.github.io/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html" rel="alternate" type="text/html" title="简单介绍常见分区格式" /><published>2021-03-25T11:09:00+08:00</published><updated>2021-03-25T11:09:00+08:00</updated><id>http://sliencejoker.github.io/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F</id><content type="html" xml:base="http://sliencejoker.github.io/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;2020年7月份至今，在培训班学习技术期间，先后
 在当地买了32G的金士顿U盘，在二手鱼市场上买

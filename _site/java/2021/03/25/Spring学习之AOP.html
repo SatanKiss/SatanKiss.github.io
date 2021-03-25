@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://sliencejoker.github.io/feed.xml" title="Lucifer の Blog" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Lucifer の Blog</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Lucifer の Blog</a>
+	</div>
+	<p class="lead">Themed by ejjoo</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#jekyll">
+				<span class="name">jekyll</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#update">
+				<span class="name">update</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#linux">
+				<span class="name">linux</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#resume">
+				<span class="name">resume</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#tips">
+				<span class="name">tips</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#Windows">
+				<span class="name">Windows</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#Android">
+				<span class="name">Android</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#java">
+				<span class="name">java</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			Spring学习之AOP
+		</div>
+		<time class="post-date dt-published" datetime="2021-03-25T18:48:00+08:00" itemprop="datePublished">2021/03/25
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<h3 id="撰写缘由">撰写缘由</h3>
+<blockquote>
+  <p>这两天在学Spring，关于AOP的学习上遇到了争论，差点打起来(笑)。故此记录一下。话不多说，进入正文。</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <ul>
+    <li>Q1:什么是SpringAOP？
+      <ul>
+        <li>A:说的简单点就是面向切面编程。对照Spring的官方文档，官方是这么解释的：<br />
+官方说AOP(面向切面编程)是对OOP(面向对象编程)的补充，有别于我们过去在OOP中对类的模块化，AOP是对切面的模块化。AOP是Spring的关键组件之一，IOC容器不依赖于AOP，你爱用不用，但是AOP是对SpringIOC的强大补充，提供了一个非常强大的中间件解决方案。(潜台词是我这么优秀，多用用)。</li>
+      </ul>
+    </li>
+    <li>Q2：AOP的五大通知类型有哪些？
+      <ul>
+        <li>A：先贴上官方的一段文字，如下所示：
+          <ul>
+            <li>Before advice: Advice that runs before a join point but that does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).</li>
+            <li>After returning advice: Advice to be run after a join point completes normally (for example, if a method returns without throwing an exception).</li>
+            <li>After throwing advice: Advice to be run if a method exits by throwing an exception.</li>
+            <li>After <span style="color:red;">(<strong>finally</strong>)</span> advice: Advice to be run regardless of the means by which a join point exits (normal or exceptional return).</li>
+            <li>Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception.<br /></li>
+          </ul>
+        </li>
+        <li>A2: 简单说就是Before、After returning、After throwing、After、Around。</li>
+      </ul>
+    </li>
+    <li>Q3: 为什么能差点干起来？
+      <ul>
+        <li>A:我们看上文，AOP的五大通知类型，其中After就占3样，Before和Around都没啥争议，焦点就在这个After里。</li>
+      </ul>
+    </li>
+    <li>Q4：3种After的区别是什么？
+      <ul>
+        <li>A: 在讲解过程中老师是这么说的，他将After returning 解释为返回后通知，返回数据后执行；将After throwing 解释为后置通知，抛出异常后通知；将After解释为后置通知，方法执行后执行。争论焦点就在于这三种After的执行先后顺序。经过进一步的验证得知，After throwing方法只有在有异常的时候会执行，故不再提。当用注解方式执行AOP操作的话，After returning执行要早于After。类似代码如下：</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@After</span><span class="o">(</span><span class="s">"execution(* com.yiyun..*Service.*(..))"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doAfter</span><span class="o">(</span><span class="nc">JoinPoint</span> <span class="n">joinPoint</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"执行doAfter"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@AfterReturning</span><span class="o">(</span><span class="s">"execution(* com.yiyun..*Service.*(..))"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doAfterReturning</span><span class="o">(</span><span class="nc">JoinPoint</span> <span class="n">joinPoint</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"doAfterReturning"</span><span class="o">);</span>
+    <span class="o">}</span>    
+</code></pre></div></div>
+<blockquote>
+  <ul>
+    <li>程序运行结果如下：
+      <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">doAfterReturning</span>
+    <span class="n">执行doAfter</span>
+</code></pre></div>      </div>
+      <p>而当我们使用AOP的XML配置式执行时，After和After returning取决于你在配置文件中的先后顺序。换言之，当你使用XML配置式使用AOP框架时，你想让After先执行就把它配在前面，你想让它后执行就配在后面。
+如下所示配置：</p>
+      <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c">&lt;!--返回后通知 方法执行完毕后执行--&gt;</span>
+    <span class="nt">&lt;aop:after-returning</span> <span class="na">method=</span><span class="s">"doAfterReturning"</span> <span class="na">returning=</span><span class="s">"ret"</span> <span class="na">pointcut-ref=</span><span class="s">"pointcut"</span> <span class="nt">/&gt;</span>
+   <span class="c">&lt;!--后置通知 方法执行后执行--&gt;</span>
+    <span class="nt">&lt;aop:after</span> <span class="na">method=</span><span class="s">"doAfter"</span> <span class="na">pointcut-ref=</span><span class="s">"pointcut"</span> <span class="nt">/&gt;</span>
+</code></pre></div>      </div>
+      <p>这种配置说明当切面同时存在after和after-returning方法是，最后执行After方法，如果将after方法配置在after-returning方法之前，则先执行after后执行after-returning。</p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+<blockquote>
+  <p>其实仔细看官方文档的话我们会发现官方在AOP的五种通知中给After特别加上了(finally)。原来官方早已看穿了这一切。<br />
+培训老师指出，在工作中，看具体应用场景，在AOP中应用最多的是Around方法，在around方法中，我们可以较为方便的插入切面方法运行前、后、异常时的代码块，使用比较灵活。
+<span style="display:block;text-align:right;color:black;"> <strong>终</strong> </span></p>
+</blockquote>
+
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>
