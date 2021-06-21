@@ -125,61 +125,63 @@
 		</div>
 		<div class="content">
 			<article class="post">
-  <header class="post-header home">
-    <div class="post-title">Articles</div>
-  </header>
+	<header class="post-header">
+		<div class="post-title"> 
+			Ruby环境的完整配置·Windows篇
+		</div>
+		<time class="post-date dt-published" datetime="2021-05-10T14:58:00+08:00" itemprop="datePublished">2021/05/10
+		</time>		
+	</header>
 
-  <div class="post-content"><ul class="post-list"><li class="post-list-item">
-        <!----><span class="post-date">2021/05/10</span>
-      	<a class="post-link" href="/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html">
-    	    Ruby环境的完整配置·Windows篇
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/05/10</span>
-      	<a class="post-link" href="/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html">
-    	    黑苹果折腾指南
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/25</span>
-      	<a class="post-link" href="/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html">
-    	    Spring学习之AOP
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/25</span>
-      	<a class="post-link" href="/tips/2021/03/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%B8%B8%E8%A7%81%E5%88%86%E5%8C%BA%E6%A0%BC%E5%BC%8F.html">
-    	    简单介绍常见分区格式
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/24</span>
-      	<a class="post-link" href="/android/2021/03/24/%E7%B1%B36%E9%92%89%E5%AD%90%E6%88%B7%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB.html">
-    	    米6钉子户的自我修养
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/22</span>
-      	<a class="post-link" href="/windows/2021/03/22/Windows%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7.html">
-    	    Windows使用技巧
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/21</span>
-      	<a class="post-link" href="/tips/2021/03/21/Github%E5%8A%A0%E9%80%9F.html">
-    	    Github加速
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/20</span>
-      	<a class="post-link" href="/linux/2021/03/20/%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E4%B8%80%E4%B8%AAweb%E9%A1%B9%E7%9B%AE.html">
-    	    如何部署一个项目
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/17</span>
-      	<a class="post-link" href="/linux/2021/03/17/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E6%9C%8D%E5%8A%A1%E5%8C%96%E5%90%AF%E5%8A%A8.html">
-    	    Redis安装及服务化启动
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2021/03/16</span>
-      	<a class="post-link" href="/jekyll/2021/03/16/my-first-post.html">
-    	    my-first-post
-		</a></li><li class="post-list-item">
-        <!----><span class="post-date">2020/01/02</span>
-      	<a class="post-link" href="/jekyll/update/2020/01/02/welcome-to-jekyll.html">
-    	    Welcome to Jekyll!
-		</a></li></ul></div>
+	<div class="post-content">
+		<blockquote>
+  <h3 id="撰写缘由">撰写缘由</h3>
+  <p>笔者需要在Windows环境上顺利部署本人的GithubPage，以便对现阶段个人所拥有的技术能力做汇总提升。</p>
+  <h3 id="准备工作">准备工作</h3>
+  <ul>
+    <li>1 必备安装包(单击链接即可下载)
+      <ul>
+        <li>① <a href="https://github-releases.githubusercontent.com/78153411/875c4880-a15b-11eb-9f3a-7e769896fdc6?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210621%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210621T061856Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=2a74a34007b45decd94d53dd0e5b3369b63eca951deb9df38110cc50db2e30d6&amp;X-Amz-SignedHeaders=host&amp;actor_id=62662264&amp;key_id=0&amp;repo_id=78153411&amp;response-content-disposition=attachment%3B%20filename%3Drubyinstaller-3.0.1-1-x64.exe&amp;response-content-type=application%2Foctet-stream">RubyInstaller</a></li>
+        <li>② <a href="https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20210604.exe">MSYS2 Installer</a></li>
+      </ul>
+    </li>
+    <li>2 必备网站
+      <ul>
+        <li>① <a href="https://www.msys2.org/">MSYS 官网</a></li>
+        <li>② <a href="http://mirrors.ustc.edu.cn/help/msys2.html">MSYS2 国内源使用帮助</a></li>
+      </ul>
+    </li>
+    <li>2 环境变量配置
+      <ul>
+        <li>安装ruby之后请将ruby安装文件夹下的bin文件夹添加至Windows系统环境变量的Path中。</li>
+      </ul>
+    </li>
+    <li>3 后续完善步骤
+      <ul>
+        <li>① 更改MSYS2为国内源，详情参考MYS2 国内源使用帮助。</li>
+        <li>② 根据MSYS2 官网执行后续命令</li>
+        <li>③ 将自己的githubpage项目克隆到本地，用自己喜欢的IDE打开，在终端中依次执行:
+          <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll bundler 
+bundle install
+bundle exec jekyll serve
+</code></pre></div>          </div>
+          <p>执行完毕即可</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="感谢名单">感谢名单</h3>
+  <ul>
+    <li><a href="http://jekyllcn.com/">Jekyll 官网</a></li>
+    <li><a href="https://www.msys2.org/">MSYS2 官网</a></li>
+    <li><a href="https://www.ruby-lang.org/zh_cn/">Ruby 官网</a></li>
+    <li><a href="https://mirrors.ustc.edu.cn/">USTC 开源镜像站</a></li>
+  </ul>
+</blockquote>
+
+	</div>
 </article>
-
-
-
-</div>
-
 		</div>
 	</div>
   </body>

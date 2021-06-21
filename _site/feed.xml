@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-05-14T20:56:30+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">黑苹果折腾指南</title><link href="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="黑苹果折腾指南" /><published>2021-05-10T14:58:00+08:00</published><updated>2021-05-10T14:58:00+08:00</updated><id>http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97</id><content type="html" xml:base="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-21T15:10:49+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">黑苹果折腾指南</title><link href="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="黑苹果折腾指南" /><published>2021-05-10T14:58:00+08:00</published><updated>2021-05-10T14:58:00+08:00</updated><id>http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97</id><content type="html" xml:base="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html">&lt;blockquote&gt;
   &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
   &lt;p&gt;这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。&lt;br /&gt;&lt;/p&gt;
   &lt;h3 id=&quot;具体实现&quot;&gt;具体实现&lt;/h3&gt;
@@ -9,7 +9,51 @@
     &lt;li&gt;&lt;a href=&quot;https://xstar-dev.github.io/hackintosh_advanced/Guide_For_Battery_Hotpatch.html&quot;&gt;XStar-Dev’s Blog&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;以及其他开发黑苹果驱动的各类大神。&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="mac" /><summary type="html">撰写缘由 这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。 具体实现 参考OpenCore黑果小兵的OC-little热补丁，以及github上与我机器型号相近的EFI配置，通过分析其DSDT文件发现，所谓电池电量信息显示不外就是在自己机器的DSDT.aml文件下EC作用域里添加B1B2 B1B4 RE1B RECB方法，对电池设备相关方法如GBIF、GBST、_BST、_BSF、_BIF等方法里的变量对高于8位以上的字节进行字节拆分和读取。 Thanks 黑果小兵的部落阁 XStar-Dev’s Blog 以及其他开发黑苹果驱动的各类大神。</summary></entry><entry><title type="html">Spring学习之AOP</title><link href="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html" rel="alternate" type="text/html" title="Spring学习之AOP" /><published>2021-03-25T18:48:00+08:00</published><updated>2021-03-25T18:48:00+08:00</updated><id>http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP</id><content type="html" xml:base="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="mac" /><summary type="html">撰写缘由 这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。 具体实现 参考OpenCore黑果小兵的OC-little热补丁，以及github上与我机器型号相近的EFI配置，通过分析其DSDT文件发现，所谓电池电量信息显示不外就是在自己机器的DSDT.aml文件下EC作用域里添加B1B2 B1B4 RE1B RECB方法，对电池设备相关方法如GBIF、GBST、_BST、_BSF、_BIF等方法里的变量对高于8位以上的字节进行字节拆分和读取。 Thanks 黑果小兵的部落阁 XStar-Dev’s Blog 以及其他开发黑苹果驱动的各类大神。</summary></entry><entry><title type="html">Ruby环境的完整配置·Windows篇</title><link href="http://sliencejoker.github.io/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html" rel="alternate" type="text/html" title="Ruby环境的完整配置·Windows篇" /><published>2021-05-10T14:58:00+08:00</published><updated>2021-05-10T14:58:00+08:00</updated><id>http://sliencejoker.github.io/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%C2%B7Windows%E7%AF%87</id><content type="html" xml:base="http://sliencejoker.github.io/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html">&lt;blockquote&gt;
+  &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+  &lt;p&gt;笔者需要在Windows环境上顺利部署本人的GithubPage，以便对现阶段个人所拥有的技术能力做汇总提升。&lt;/p&gt;
+  &lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1 必备安装包(单击链接即可下载)
+      &lt;ul&gt;
+        &lt;li&gt;① &lt;a href=&quot;https://github-releases.githubusercontent.com/78153411/875c4880-a15b-11eb-9f3a-7e769896fdc6?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210621%2Fus-east-1%2Fs3%2Faws4_request&amp;amp;X-Amz-Date=20210621T061856Z&amp;amp;X-Amz-Expires=300&amp;amp;X-Amz-Signature=2a74a34007b45decd94d53dd0e5b3369b63eca951deb9df38110cc50db2e30d6&amp;amp;X-Amz-SignedHeaders=host&amp;amp;actor_id=62662264&amp;amp;key_id=0&amp;amp;repo_id=78153411&amp;amp;response-content-disposition=attachment%3B%20filename%3Drubyinstaller-3.0.1-1-x64.exe&amp;amp;response-content-type=application%2Foctet-stream&quot;&gt;RubyInstaller&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;② &lt;a href=&quot;https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20210604.exe&quot;&gt;MSYS2 Installer&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;2 必备网站
+      &lt;ul&gt;
+        &lt;li&gt;① &lt;a href=&quot;https://www.msys2.org/&quot;&gt;MSYS 官网&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;② &lt;a href=&quot;http://mirrors.ustc.edu.cn/help/msys2.html&quot;&gt;MSYS2 国内源使用帮助&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;2 环境变量配置
+      &lt;ul&gt;
+        &lt;li&gt;安装ruby之后请将ruby安装文件夹下的bin文件夹添加至Windows系统环境变量的Path中。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;3 后续完善步骤
+      &lt;ul&gt;
+        &lt;li&gt;① 更改MSYS2为国内源，详情参考MYS2 国内源使用帮助。&lt;/li&gt;
+        &lt;li&gt;② 根据MSYS2 官网执行后续命令&lt;/li&gt;
+        &lt;li&gt;③ 将自己的githubpage项目克隆到本地，用自己喜欢的IDE打开，在终端中依次执行:
+          &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll bundler 
+bundle install
+bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+          &lt;p&gt;执行完毕即可&lt;/p&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3 id=&quot;感谢名单&quot;&gt;感谢名单&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;http://jekyllcn.com/&quot;&gt;Jekyll 官网&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.msys2.org/&quot;&gt;MSYS2 官网&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.ruby-lang.org/zh_cn/&quot;&gt;Ruby 官网&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://mirrors.ustc.edu.cn/&quot;&gt;USTC 开源镜像站&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="windows" /><summary type="html">撰写缘由 笔者需要在Windows环境上顺利部署本人的GithubPage，以便对现阶段个人所拥有的技术能力做汇总提升。 准备工作 1 必备安装包(单击链接即可下载) ① RubyInstaller ② MSYS2 Installer 2 必备网站 ① MSYS 官网 ② MSYS2 国内源使用帮助 2 环境变量配置 安装ruby之后请将ruby安装文件夹下的bin文件夹添加至Windows系统环境变量的Path中。 3 后续完善步骤 ① 更改MSYS2为国内源，详情参考MYS2 国内源使用帮助。 ② 根据MSYS2 官网执行后续命令 ③ 将自己的githubpage项目克隆到本地，用自己喜欢的IDE打开，在终端中依次执行: gem install jekyll bundler bundle install bundle exec jekyll serve 执行完毕即可 感谢名单 Jekyll 官网 MSYS2 官网 Ruby 官网 USTC 开源镜像站</summary></entry><entry><title type="html">Spring学习之AOP</title><link href="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html" rel="alternate" type="text/html" title="Spring学习之AOP" /><published>2021-03-25T18:48:00+08:00</published><updated>2021-03-25T18:48:00+08:00</updated><id>http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP</id><content type="html" xml:base="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;这两天在学Spring，关于AOP的学习上遇到了争论，差点打起来(笑)。故此记录一下。话不多说，进入正文。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -464,20 +508,4 @@ A3:这是个细心活，缺少相关依赖，终端中gem安装缺少的包，�
   &lt;p&gt;1.尽量避免sudo gem XXX 的方式&lt;br /&gt;
 2.参考清华大学开源镜像站更改ruby国内源，加快下载速度&lt;br /&gt;
 &lt;a&gt;https://mirrors.tuna.tsinghua.edu.cn/help/rubygems/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="jekyll" /><summary type="html">jekyll初次使用体验 跟着网上的教程乱七八糟的，终于搭好了自己的博客。 感谢少数派的教程，感谢jekyllThemes大佬们的贡献， 感谢jekyll官网的文档指点。 在本次搭建博客的过程中，遇到了几个比较坑的问题， 附上问题和解决办法。</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://sliencejoker.github.io/jekyll/update/2020/01/02/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-01-02T18:31:29+08:00</published><updated>2020-01-02T18:31:29+08:00</updated><id>http://sliencejoker.github.io/jekyll/update/2020/01/02/welcome-to-jekyll</id><content type="html" xml:base="http://sliencejoker.github.io/jekyll/update/2020/01/02/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name></name></author><category term="jekyll" /><summary type="html">jekyll初次使用体验 跟着网上的教程乱七八糟的，终于搭好了自己的博客。 感谢少数派的教程，感谢jekyllThemes大佬们的贡献， 感谢jekyll官网的文档指点。 在本次搭建博客的过程中，遇到了几个比较坑的问题， 附上问题和解决办法。</summary></entry></feed>
