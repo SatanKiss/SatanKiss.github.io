@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-22T22:02:48+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Aries の Blog</title><subtitle>Themed by ejjoo &lt;br /&gt; used by Joker丶阿楷</subtitle><entry><title type="html">Tomcat基于APR的调优</title><link href="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html" rel="alternate" type="text/html" title="Tomcat基于APR的调优" /><published>2021-06-22T14:58:00+08:00</published><updated>2021-06-22T14:58:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-22T22:09:42+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Aries の Blog</title><subtitle>Themed by ejjoo &lt;br /&gt; Used by Joker丶阿楷</subtitle><entry><title type="html">Tomcat基于APR的调优</title><link href="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html" rel="alternate" type="text/html" title="Tomcat基于APR的调优" /><published>2021-06-22T14:58:00+08:00</published><updated>2021-06-22T14:58:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html">&lt;blockquote&gt;
   &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
   &lt;p&gt;  笔者Java开发菜鸟一枚，由于项目基本使用Tomcat容器，部署过程中查看tomcat日志经常会发现warning提示开启APR，之前在mac操作系统上成功开启过，如今换用CentOS，需要重新部署一下，故此记录一下开启过程，避免以后需要的时候频繁去网上找轮子。&lt;/p&gt;
   &lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
@@ -23,56 +23,55 @@
   &lt;hr /&gt;
   &lt;h3 id=&quot;开始操作&quot;&gt;开始操作&lt;/h3&gt;
   &lt;ul&gt;
-    &lt;li&gt;
-      &lt;ol&gt;
-        &lt;li&gt;环境准备
-          &lt;ul&gt;
-            &lt;li&gt;由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-      &lt;/ol&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;ol&gt;
-        &lt;li&gt;实操
-          &lt;ul&gt;
-            &lt;li&gt;2.1 为了便于安装动态库，本次操作以&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/usr/local/&lt;/code&gt;目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar zxf XXX.tar.gz&lt;/code&gt;命令解压，并设置好相应的jdk环境变量。&lt;/li&gt;
-            &lt;li&gt;2.2 以下操作采取纯命令记录。&lt;br /&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-      &lt;/ol&gt;
-
-      &lt;p&gt;yum install -y openssl openssl-devel gcc make #安装相关依赖,非CentOS请自行用其他包管理命令替代&lt;br /&gt;
-  tar zxf jdk-8u291-linux-x64.tar.gz #解压jdk源码包,设置jdk环境变量请自行移步各大搜索引擎  &lt;br /&gt;
-  tar zxf apache-tomcat-8.5.68.tar.gz #解压tomcat core 源码包&lt;br /&gt;
-  tar zxf apr-1.7.0.tar.gz #解压apr源码包&lt;br /&gt;
-  tar zxf apr-iconv-1.2.2.tar.gz #解压apr-iconv源码包&lt;br /&gt;
-  tar zxf apr-util-1.6.1.tar.gz #解压apr-util源码包&lt;br /&gt;
-  tar zxf tomcat-native-1.2.30-src.tar.gz #解压tomcat-native源码包&lt;br /&gt;
-  cd apr-1.7.0&lt;br /&gt;
-  ./configure –prefix=/usr/local/apr&lt;br /&gt;
-  make&lt;br /&gt;
-  make install #从cd到make install实现了对apr的安装&lt;br /&gt;
-  cd apr-iconv-1.2.2&lt;br /&gt;
-  ./configure –prefix=/usr/local/apr-iconv –with-apr=/usr/local/apr&lt;br /&gt;
-  make &amp;amp;&amp;amp; make install #实现对apr-iconv的安装&lt;br /&gt;
-  cd apr-util-1.6.1&lt;br /&gt;
-  ./configure –prefix=/usr/local/apr-util –with-apr=/usr/local/apr –with-apr-iconv=/usr/local/apr-iconv/bin/apriconv&lt;br /&gt;
-  make &amp;amp;&amp;amp; make install #实现对apr-util的安装&lt;br /&gt;
-  cd tomcat-native-1.2.30&lt;br /&gt;
-  ./configure –with-ssl –with-apr=/usr/local/apr –with-java-home=/usr/local/jdk1.8.0_291&lt;br /&gt;
-  make &amp;amp;&amp;amp; make install # 实现对tomcat-native的安装&lt;br /&gt;
-  vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
-  export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH&lt;br /&gt;
-  source ~/.zshrc&lt;br /&gt;&lt;/p&gt;
+    &lt;li&gt;Ⅰ. 环境准备
       &lt;ul&gt;
-        &lt;li&gt;2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。
-          &lt;h3 id=&quot;感谢名单&quot;&gt;感谢名单&lt;/h3&gt;
-        &lt;/li&gt;
+        &lt;li&gt;由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
+    &lt;li&gt;Ⅱ. 实操
+      &lt;ul&gt;
+        &lt;li&gt;2.1 为了便于安装动态库，本次操作以&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/usr/local/&lt;/code&gt;目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar zxf XXX.tar.gz&lt;/code&gt;命令解压，并设置好相应的jdk环境变量。&lt;/li&gt;
+        &lt;li&gt;
+          &lt;p&gt;2.2 以下操作采取纯命令记录。&lt;br /&gt;&lt;/p&gt;
+
+          &lt;p&gt;yum install -y openssl openssl-devel gcc make #安装相关依赖,非CentOS请自行用其他包管理命令替代&lt;br /&gt;
+tar zxf jdk-8u291-linux-x64.tar.gz #解压jdk源码包,设置jdk环境变量请自行移步各大搜索引擎  &lt;br /&gt;
+tar zxf apache-tomcat-8.5.68.tar.gz #解压tomcat core 源码包&lt;br /&gt;
+tar zxf apr-1.7.0.tar.gz #解压apr源码包&lt;br /&gt;
+tar zxf apr-iconv-1.2.2.tar.gz #解压apr-iconv源码包&lt;br /&gt;
+tar zxf apr-util-1.6.1.tar.gz #解压apr-util源码包&lt;br /&gt;
+tar zxf tomcat-native-1.2.30-src.tar.gz #解压tomcat-native源码包&lt;br /&gt;
+cd apr-1.7.0&lt;br /&gt;
+./configure –prefix=/usr/local/apr&lt;br /&gt;
+make&lt;br /&gt;
+make install #从cd到make install实现了对apr的安装&lt;br /&gt;
+cd apr-iconv-1.2.2&lt;br /&gt;
+./configure –prefix=/usr/local/apr-iconv –with-apr=/usr/local/apr&lt;br /&gt;
+make &amp;amp;&amp;amp; make install #实现对apr-iconv的安装&lt;br /&gt;
+cd apr-util-1.6.1&lt;br /&gt;
+./configure –prefix=/usr/local/apr-util –with-apr=/usr/local/apr –with-apr-iconv=/usr/local/apr-iconv/bin/apriconv&lt;br /&gt;
+make &amp;amp;&amp;amp; make install #实现对apr-util的安装&lt;br /&gt;
+cd tomcat-native-1.2.30&lt;br /&gt;
+./configure –with-ssl –with-apr=/usr/local/apr –with-java-home=/usr/local/jdk1.8.0_291&lt;br /&gt;
+make &amp;amp;&amp;amp; make install # 实现对tomcat-native的安装&lt;br /&gt;
+vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
+export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH&lt;br /&gt;
+source ~/.zshrc&lt;br /&gt;&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;h3 id=&quot;感谢名单&quot;&gt;感谢名单&lt;/h3&gt;
+  &lt;ul&gt;
     &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/busigulang/articles/8529719.html&quot;&gt;centos 7 Tomcat 8.5 的安装及生产环境的搭建调优&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;各大搜索引擎&lt;/li&gt;
+    &lt;li&gt;若本文内容有不足之处，请移步网络查询解决办法。&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由   笔者Java开发菜鸟一枚，由于项目基本使用Tomcat容器，部署过程中查看tomcat日志经常会发现warning提示开启APR，之前在mac操作系统上成功开启过，如今换用CentOS，需要重新部署一下，故此记录一下开启过程，避免以后需要的时候频繁去网上找轮子。 准备工作 Ⅰ. 相关源码包(如无特殊说明此处源码包格式一律以tar.gz格式结尾) 1.1 jdk源码包，笔者使用的是jdk1.8最新版本，由于Oracle JDK旧版本需要自行注册Oracle账号并去官网下载，故此处不放下载链接。 1.2 tomcat core 任意版本，此处以 tomcat8 为例 1.3 tomcat APR系列，请移步此 网站 ，下载apr、apr-iconv、apr-util源码包。请移步此 网站 下载tomcat-native源码包。 Ⅱ. 常用编译命令 2.1 tar zxvf XXX.tar.gz (解压缩源码包命令) 2.2 ./configure XXX (编译安装命令)</summary></entry><entry><title type="html">Ruby环境的完整配置·Windows篇</title><link href="http://sliencejoker.github.io/windows/2021/06/21/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html" rel="alternate" type="text/html" title="Ruby环境的完整配置·Windows篇" /><published>2021-06-21T14:58:00+08:00</published><updated>2021-06-21T14:58:00+08:00</updated><id>http://sliencejoker.github.io/windows/2021/06/21/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%C2%B7Windows%E7%AF%87</id><content type="html" xml:base="http://sliencejoker.github.io/windows/2021/06/21/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html">&lt;blockquote&gt;
   &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;

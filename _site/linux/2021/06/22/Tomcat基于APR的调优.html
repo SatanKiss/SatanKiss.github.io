@@ -15,7 +15,7 @@
 	<div class='sidebar-brand'>
 		<a href="/about/">Aries の Blog</a>
 	</div>
-	<p class="lead">Themed by ejjoo <br /> used by Joker丶阿楷</p></div>
+	<p class="lead">Themed by ejjoo <br /> Used by Joker丶阿楷</p></div>
 
 <div class="sidebar-item sidebar-nav">
 	<ul class="nav">
@@ -159,56 +159,55 @@
   <hr />
   <h3 id="开始操作">开始操作</h3>
   <ul>
-    <li>
-      <ol>
-        <li>环境准备
-          <ul>
-            <li>由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。</li>
-          </ul>
-        </li>
-      </ol>
-    </li>
-    <li>
-      <ol>
-        <li>实操
-          <ul>
-            <li>2.1 为了便于安装动态库，本次操作以<code class="language-plaintext highlighter-rouge">/usr/local/</code>目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用<code class="language-plaintext highlighter-rouge">tar zxf XXX.tar.gz</code>命令解压，并设置好相应的jdk环境变量。</li>
-            <li>2.2 以下操作采取纯命令记录。<br /></li>
-          </ul>
-        </li>
-      </ol>
-
-      <p>yum install -y openssl openssl-devel gcc make #安装相关依赖,非CentOS请自行用其他包管理命令替代<br />
-  tar zxf jdk-8u291-linux-x64.tar.gz #解压jdk源码包,设置jdk环境变量请自行移步各大搜索引擎  <br />
-  tar zxf apache-tomcat-8.5.68.tar.gz #解压tomcat core 源码包<br />
-  tar zxf apr-1.7.0.tar.gz #解压apr源码包<br />
-  tar zxf apr-iconv-1.2.2.tar.gz #解压apr-iconv源码包<br />
-  tar zxf apr-util-1.6.1.tar.gz #解压apr-util源码包<br />
-  tar zxf tomcat-native-1.2.30-src.tar.gz #解压tomcat-native源码包<br />
-  cd apr-1.7.0<br />
-  ./configure –prefix=/usr/local/apr<br />
-  make<br />
-  make install #从cd到make install实现了对apr的安装<br />
-  cd apr-iconv-1.2.2<br />
-  ./configure –prefix=/usr/local/apr-iconv –with-apr=/usr/local/apr<br />
-  make &amp;&amp; make install #实现对apr-iconv的安装<br />
-  cd apr-util-1.6.1<br />
-  ./configure –prefix=/usr/local/apr-util –with-apr=/usr/local/apr –with-apr-iconv=/usr/local/apr-iconv/bin/apriconv<br />
-  make &amp;&amp; make install #实现对apr-util的安装<br />
-  cd tomcat-native-1.2.30<br />
-  ./configure –with-ssl –with-apr=/usr/local/apr –with-java-home=/usr/local/jdk1.8.0_291<br />
-  make &amp;&amp; make install # 实现对tomcat-native的安装<br />
-  vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
-  export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH<br />
-  source ~/.zshrc<br /></p>
+    <li>Ⅰ. 环境准备
       <ul>
-        <li>2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。
-          <h3 id="感谢名单">感谢名单</h3>
-        </li>
+        <li>由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。</li>
       </ul>
     </li>
+    <li>Ⅱ. 实操
+      <ul>
+        <li>2.1 为了便于安装动态库，本次操作以<code class="language-plaintext highlighter-rouge">/usr/local/</code>目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用<code class="language-plaintext highlighter-rouge">tar zxf XXX.tar.gz</code>命令解压，并设置好相应的jdk环境变量。</li>
+        <li>
+          <p>2.2 以下操作采取纯命令记录。<br /></p>
+
+          <p>yum install -y openssl openssl-devel gcc make #安装相关依赖,非CentOS请自行用其他包管理命令替代<br />
+tar zxf jdk-8u291-linux-x64.tar.gz #解压jdk源码包,设置jdk环境变量请自行移步各大搜索引擎  <br />
+tar zxf apache-tomcat-8.5.68.tar.gz #解压tomcat core 源码包<br />
+tar zxf apr-1.7.0.tar.gz #解压apr源码包<br />
+tar zxf apr-iconv-1.2.2.tar.gz #解压apr-iconv源码包<br />
+tar zxf apr-util-1.6.1.tar.gz #解压apr-util源码包<br />
+tar zxf tomcat-native-1.2.30-src.tar.gz #解压tomcat-native源码包<br />
+cd apr-1.7.0<br />
+./configure –prefix=/usr/local/apr<br />
+make<br />
+make install #从cd到make install实现了对apr的安装<br />
+cd apr-iconv-1.2.2<br />
+./configure –prefix=/usr/local/apr-iconv –with-apr=/usr/local/apr<br />
+make &amp;&amp; make install #实现对apr-iconv的安装<br />
+cd apr-util-1.6.1<br />
+./configure –prefix=/usr/local/apr-util –with-apr=/usr/local/apr –with-apr-iconv=/usr/local/apr-iconv/bin/apriconv<br />
+make &amp;&amp; make install #实现对apr-util的安装<br />
+cd tomcat-native-1.2.30<br />
+./configure –with-ssl –with-apr=/usr/local/apr –with-java-home=/usr/local/jdk1.8.0_291<br />
+make &amp;&amp; make install # 实现对tomcat-native的安装<br />
+vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
+export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH<br />
+source ~/.zshrc<br /></p>
+        </li>
+        <li>2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <h3 id="感谢名单">感谢名单</h3>
+  <ul>
     <li><a href="https://www.cnblogs.com/busigulang/articles/8529719.html">centos 7 Tomcat 8.5 的安装及生产环境的搭建调优</a></li>
     <li>各大搜索引擎</li>
+    <li>若本文内容有不足之处，请移步网络查询解决办法。</li>
   </ul>
 </blockquote>
 

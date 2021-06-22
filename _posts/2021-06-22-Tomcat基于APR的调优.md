@@ -18,9 +18,9 @@ category: linux
 
 > ---
 > ### 开始操作
-> - 1. 环境准备
+> - Ⅰ. 环境准备
 >   - 由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。
-> - 2. 实操
+> - Ⅱ. 实操
 >   - 2.1 为了便于安装动态库，本次操作以```/usr/local/```目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用```tar zxf XXX.tar.gz```命令解压，并设置好相应的jdk环境变量。
 >   - 2.2 以下操作采取纯命令记录。<br />
 > 
@@ -48,10 +48,13 @@ category: linux
     export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH<br>
     source ~/.zshrc<br>
 >   - 2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。
+
+---
+
 > ### 感谢名单
 > - [centos 7 Tomcat 8.5 的安装及生产环境的搭建调优](https://www.cnblogs.com/busigulang/articles/8529719.html)
 > - 各大搜索引擎
-
+> - 若本文内容有不足之处，请移步网络查询解决办法。
 
 
     
