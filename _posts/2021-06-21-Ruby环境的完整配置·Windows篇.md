@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ruby环境的完整配置·Windows篇
-date: 2021-05-10 15:58:00 +0900
+date: 2021-06-21 15:58:00 +0900
 category: windows
 ---
 

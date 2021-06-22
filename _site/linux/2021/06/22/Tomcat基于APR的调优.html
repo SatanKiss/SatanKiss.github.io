@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://sliencejoker.github.io/feed.xml" title="Aries の Blog" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Aries の Blog</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Aries の Blog</a>
+	</div>
+	<p class="lead">Themed by ejjoo <br /> used by Joker丶阿楷</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#jekyll">
+				<span class="name">jekyll</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#update">
+				<span class="name">update</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#linux">
+				<span class="name">linux</span>
+				<span class="badge">3</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#tips">
+				<span class="name">tips</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#Windows">
+				<span class="name">Windows</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#Android">
+				<span class="name">Android</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#java">
+				<span class="name">java</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#mac">
+				<span class="name">mac</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#windows">
+				<span class="name">windows</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			Tomcat基于APR的调优
+		</div>
+		<time class="post-date dt-published" datetime="2021-06-22T14:58:00+08:00" itemprop="datePublished">2021/06/22
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<blockquote>
+  <h3 id="撰写缘由">撰写缘由</h3>
+  <p>  笔者Java开发菜鸟一枚，由于项目基本使用Tomcat容器，部署过程中查看tomcat日志经常会发现warning提示开启APR，之前在mac操作系统上成功开启过，如今换用CentOS，需要重新部署一下，故此记录一下开启过程，避免以后需要的时候频繁去网上找轮子。</p>
+  <h3 id="准备工作">准备工作</h3>
+  <ul>
+    <li>Ⅰ. 相关源码包(如无特殊说明此处源码包格式一律以tar.gz格式结尾)
+      <ul>
+        <li>1.1 jdk源码包，笔者使用的是jdk1.8最新版本，由于Oracle JDK旧版本需要自行注册Oracle账号并去官网下载，故此处不放下载链接。</li>
+        <li>1.2 tomcat core 任意版本，此处以 <a href="https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.68/bin/apache-tomcat-8.5.68.tar.gz">tomcat8</a> 为例</li>
+        <li>1.3 tomcat APR系列，请移步此 <a href="https://mirrors.ustc.edu.cn/apache/apr/">网站</a> ，下载apr、apr-iconv、apr-util源码包。请移步此 <a href="https://mirrors.ustc.edu.cn/apache/tomcat/tomcat-connectors/native/1.2.30/source/">网站</a> 下载tomcat-native源码包。</li>
+      </ul>
+    </li>
+    <li>Ⅱ. 常用编译命令
+      <ul>
+        <li>2.1 <code class="language-plaintext highlighter-rouge">tar zxvf XXX.tar.gz</code> (解压缩源码包命令)</li>
+        <li>2.2 <code class="language-plaintext highlighter-rouge">./configure XXX</code> (编译安装命令)</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <hr />
+  <h3 id="开始操作">开始操作</h3>
+  <ul>
+    <li>
+      <ol>
+        <li>环境准备
+          <ul>
+            <li>由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。</li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <ol>
+        <li>实操
+          <ul>
+            <li>2.1 为了便于安装动态库，本次操作以<code class="language-plaintext highlighter-rouge">/usr/local/</code>目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用<code class="language-plaintext highlighter-rouge">tar zxf XXX.tar.gz</code>命令解压，并设置好相应的jdk环境变量。</li>
+            <li>2.2 以下操作采取纯命令记录。<br /></li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>yum install -y openssl openssl-devel gcc make #安装相关依赖,非CentOS请自行用其他包管理命令替代<br />
+  tar zxf jdk-8u291-linux-x64.tar.gz #解压jdk源码包,设置jdk环境变量请自行移步各大搜索引擎  <br />
+  tar zxf apache-tomcat-8.5.68.tar.gz #解压tomcat core 源码包<br />
+  tar zxf apr-1.7.0.tar.gz #解压apr源码包<br />
+  tar zxf apr-iconv-1.2.2.tar.gz #解压apr-iconv源码包<br />
+  tar zxf apr-util-1.6.1.tar.gz #解压apr-util源码包<br />
+  tar zxf tomcat-native-1.2.30-src.tar.gz #解压tomcat-native源码包<br />
+  cd apr-1.7.0<br />
+  ./configure –prefix=/usr/local/apr<br />
+  make<br />
+  make install #从cd到make install实现了对apr的安装<br />
+  cd apr-iconv-1.2.2<br />
+  ./configure –prefix=/usr/local/apr-iconv –with-apr=/usr/local/apr<br />
+  make &amp;&amp; make install #实现对apr-iconv的安装<br />
+  cd apr-util-1.6.1<br />
+  ./configure –prefix=/usr/local/apr-util –with-apr=/usr/local/apr –with-apr-iconv=/usr/local/apr-iconv/bin/apriconv<br />
+  make &amp;&amp; make install #实现对apr-util的安装<br />
+  cd tomcat-native-1.2.30<br />
+  ./configure –with-ssl –with-apr=/usr/local/apr –with-java-home=/usr/local/jdk1.8.0_291<br />
+  make &amp;&amp; make install # 实现对tomcat-native的安装<br />
+  vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
+  export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH<br />
+  source ~/.zshrc<br /></p>
+      <ul>
+        <li>2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。
+          <h3 id="感谢名单">感谢名单</h3>
+        </li>
+      </ul>
+    </li>
+    <li><a href="https://www.cnblogs.com/busigulang/articles/8529719.html">centos 7 Tomcat 8.5 的安装及生产环境的搭建调优</a></li>
+    <li>各大搜索引擎</li>
+  </ul>
+</blockquote>
+
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>

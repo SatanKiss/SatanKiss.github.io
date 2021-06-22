@@ -1,15 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-21T15:10:49+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Lucifer の Blog</title><subtitle>Themed by ejjoo</subtitle><entry><title type="html">黑苹果折腾指南</title><link href="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="黑苹果折腾指南" /><published>2021-05-10T14:58:00+08:00</published><updated>2021-05-10T14:58:00+08:00</updated><id>http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97</id><content type="html" xml:base="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-22T22:02:48+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Aries の Blog</title><subtitle>Themed by ejjoo &lt;br /&gt; used by Joker丶阿楷</subtitle><entry><title type="html">Tomcat基于APR的调优</title><link href="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html" rel="alternate" type="text/html" title="Tomcat基于APR的调优" /><published>2021-06-22T14:58:00+08:00</published><updated>2021-06-22T14:58:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html">&lt;blockquote&gt;
   &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
-  &lt;p&gt;这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。&lt;br /&gt;&lt;/p&gt;
-  &lt;h3 id=&quot;具体实现&quot;&gt;具体实现&lt;/h3&gt;
-  &lt;p&gt;参考OpenCore黑果小兵的OC-little热补丁，以及github上与我机器型号相近的EFI配置，通过分析其DSDT文件发现，所谓电池电量信息显示不外就是在自己机器的DSDT.aml文件下EC作用域里添加B1B2 B1B4 RE1B RECB方法，对电池设备相关方法如GBIF、GBST、_BST、_BSF、_BIF等方法里的变量对高于8位以上的字节进行字节拆分和读取。&lt;/p&gt;
-  &lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+  &lt;p&gt;  笔者Java开发菜鸟一枚，由于项目基本使用Tomcat容器，部署过程中查看tomcat日志经常会发现warning提示开启APR，之前在mac操作系统上成功开启过，如今换用CentOS，需要重新部署一下，故此记录一下开启过程，避免以后需要的时候频繁去网上找轮子。&lt;/p&gt;
+  &lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;https://blog.daliansky.net&quot;&gt;黑果小兵的部落阁&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://xstar-dev.github.io/hackintosh_advanced/Guide_For_Battery_Hotpatch.html&quot;&gt;XStar-Dev’s Blog&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;以及其他开发黑苹果驱动的各类大神。&lt;/li&gt;
+    &lt;li&gt;Ⅰ. 相关源码包(如无特殊说明此处源码包格式一律以tar.gz格式结尾)
+      &lt;ul&gt;
+        &lt;li&gt;1.1 jdk源码包，笔者使用的是jdk1.8最新版本，由于Oracle JDK旧版本需要自行注册Oracle账号并去官网下载，故此处不放下载链接。&lt;/li&gt;
+        &lt;li&gt;1.2 tomcat core 任意版本，此处以 &lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.68/bin/apache-tomcat-8.5.68.tar.gz&quot;&gt;tomcat8&lt;/a&gt; 为例&lt;/li&gt;
+        &lt;li&gt;1.3 tomcat APR系列，请移步此 &lt;a href=&quot;https://mirrors.ustc.edu.cn/apache/apr/&quot;&gt;网站&lt;/a&gt; ，下载apr、apr-iconv、apr-util源码包。请移步此 &lt;a href=&quot;https://mirrors.ustc.edu.cn/apache/tomcat/tomcat-connectors/native/1.2.30/source/&quot;&gt;网站&lt;/a&gt; 下载tomcat-native源码包。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Ⅱ. 常用编译命令
+      &lt;ul&gt;
+        &lt;li&gt;2.1 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar zxvf XXX.tar.gz&lt;/code&gt; (解压缩源码包命令)&lt;/li&gt;
+        &lt;li&gt;2.2 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./configure XXX&lt;/code&gt; (编译安装命令)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="mac" /><summary type="html">撰写缘由 这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。 具体实现 参考OpenCore黑果小兵的OC-little热补丁，以及github上与我机器型号相近的EFI配置，通过分析其DSDT文件发现，所谓电池电量信息显示不外就是在自己机器的DSDT.aml文件下EC作用域里添加B1B2 B1B4 RE1B RECB方法，对电池设备相关方法如GBIF、GBST、_BST、_BSF、_BIF等方法里的变量对高于8位以上的字节进行字节拆分和读取。 Thanks 黑果小兵的部落阁 XStar-Dev’s Blog 以及其他开发黑苹果驱动的各类大神。</summary></entry><entry><title type="html">Ruby环境的完整配置·Windows篇</title><link href="http://sliencejoker.github.io/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html" rel="alternate" type="text/html" title="Ruby环境的完整配置·Windows篇" /><published>2021-05-10T14:58:00+08:00</published><updated>2021-05-10T14:58:00+08:00</updated><id>http://sliencejoker.github.io/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%C2%B7Windows%E7%AF%87</id><content type="html" xml:base="http://sliencejoker.github.io/windows/2021/05/10/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html">&lt;blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;hr /&gt;
+  &lt;h3 id=&quot;开始操作&quot;&gt;开始操作&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ol&gt;
+        &lt;li&gt;环境准备
+          &lt;ul&gt;
+            &lt;li&gt;由于本次调优操作基于源码编译安装APR动态库，理论上Linux操作系统通用，前提是操作系统有必备的编译环境如gcc、make、openssl等编译依赖。&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;ol&gt;
+        &lt;li&gt;实操
+          &lt;ul&gt;
+            &lt;li&gt;2.1 为了便于安装动态库，本次操作以&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/usr/local/&lt;/code&gt;目录下为例，假设在该目录下已经准备好了如上所说的源码包。使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tar zxf XXX.tar.gz&lt;/code&gt;命令解压，并设置好相应的jdk环境变量。&lt;/li&gt;
+            &lt;li&gt;2.2 以下操作采取纯命令记录。&lt;br /&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ol&gt;
+
+      &lt;p&gt;yum install -y openssl openssl-devel gcc make #安装相关依赖,非CentOS请自行用其他包管理命令替代&lt;br /&gt;
+  tar zxf jdk-8u291-linux-x64.tar.gz #解压jdk源码包,设置jdk环境变量请自行移步各大搜索引擎  &lt;br /&gt;
+  tar zxf apache-tomcat-8.5.68.tar.gz #解压tomcat core 源码包&lt;br /&gt;
+  tar zxf apr-1.7.0.tar.gz #解压apr源码包&lt;br /&gt;
+  tar zxf apr-iconv-1.2.2.tar.gz #解压apr-iconv源码包&lt;br /&gt;
+  tar zxf apr-util-1.6.1.tar.gz #解压apr-util源码包&lt;br /&gt;
+  tar zxf tomcat-native-1.2.30-src.tar.gz #解压tomcat-native源码包&lt;br /&gt;
+  cd apr-1.7.0&lt;br /&gt;
+  ./configure –prefix=/usr/local/apr&lt;br /&gt;
+  make&lt;br /&gt;
+  make install #从cd到make install实现了对apr的安装&lt;br /&gt;
+  cd apr-iconv-1.2.2&lt;br /&gt;
+  ./configure –prefix=/usr/local/apr-iconv –with-apr=/usr/local/apr&lt;br /&gt;
+  make &amp;amp;&amp;amp; make install #实现对apr-iconv的安装&lt;br /&gt;
+  cd apr-util-1.6.1&lt;br /&gt;
+  ./configure –prefix=/usr/local/apr-util –with-apr=/usr/local/apr –with-apr-iconv=/usr/local/apr-iconv/bin/apriconv&lt;br /&gt;
+  make &amp;amp;&amp;amp; make install #实现对apr-util的安装&lt;br /&gt;
+  cd tomcat-native-1.2.30&lt;br /&gt;
+  ./configure –with-ssl –with-apr=/usr/local/apr –with-java-home=/usr/local/jdk1.8.0_291&lt;br /&gt;
+  make &amp;amp;&amp;amp; make install # 实现对tomcat-native的安装&lt;br /&gt;
+  vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
+  export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH&lt;br /&gt;
+  source ~/.zshrc&lt;br /&gt;&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。
+          &lt;h3 id=&quot;感谢名单&quot;&gt;感谢名单&lt;/h3&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/busigulang/articles/8529719.html&quot;&gt;centos 7 Tomcat 8.5 的安装及生产环境的搭建调优&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;各大搜索引擎&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由   笔者Java开发菜鸟一枚，由于项目基本使用Tomcat容器，部署过程中查看tomcat日志经常会发现warning提示开启APR，之前在mac操作系统上成功开启过，如今换用CentOS，需要重新部署一下，故此记录一下开启过程，避免以后需要的时候频繁去网上找轮子。 准备工作 Ⅰ. 相关源码包(如无特殊说明此处源码包格式一律以tar.gz格式结尾) 1.1 jdk源码包，笔者使用的是jdk1.8最新版本，由于Oracle JDK旧版本需要自行注册Oracle账号并去官网下载，故此处不放下载链接。 1.2 tomcat core 任意版本，此处以 tomcat8 为例 1.3 tomcat APR系列，请移步此 网站 ，下载apr、apr-iconv、apr-util源码包。请移步此 网站 下载tomcat-native源码包。 Ⅱ. 常用编译命令 2.1 tar zxvf XXX.tar.gz (解压缩源码包命令) 2.2 ./configure XXX (编译安装命令)</summary></entry><entry><title type="html">Ruby环境的完整配置·Windows篇</title><link href="http://sliencejoker.github.io/windows/2021/06/21/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html" rel="alternate" type="text/html" title="Ruby环境的完整配置·Windows篇" /><published>2021-06-21T14:58:00+08:00</published><updated>2021-06-21T14:58:00+08:00</updated><id>http://sliencejoker.github.io/windows/2021/06/21/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%C2%B7Windows%E7%AF%87</id><content type="html" xml:base="http://sliencejoker.github.io/windows/2021/06/21/Ruby%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE-Windows%E7%AF%87.html">&lt;blockquote&gt;
   &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
   &lt;p&gt;笔者需要在Windows环境上顺利部署本人的GithubPage，以便对现阶段个人所拥有的技术能力做汇总提升。&lt;/p&gt;
   &lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
@@ -53,7 +118,18 @@ bundle exec jekyll serve
     &lt;li&gt;&lt;a href=&quot;https://www.ruby-lang.org/zh_cn/&quot;&gt;Ruby 官网&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;https://mirrors.ustc.edu.cn/&quot;&gt;USTC 开源镜像站&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="windows" /><summary type="html">撰写缘由 笔者需要在Windows环境上顺利部署本人的GithubPage，以便对现阶段个人所拥有的技术能力做汇总提升。 准备工作 1 必备安装包(单击链接即可下载) ① RubyInstaller ② MSYS2 Installer 2 必备网站 ① MSYS 官网 ② MSYS2 国内源使用帮助 2 环境变量配置 安装ruby之后请将ruby安装文件夹下的bin文件夹添加至Windows系统环境变量的Path中。 3 后续完善步骤 ① 更改MSYS2为国内源，详情参考MYS2 国内源使用帮助。 ② 根据MSYS2 官网执行后续命令 ③ 将自己的githubpage项目克隆到本地，用自己喜欢的IDE打开，在终端中依次执行: gem install jekyll bundler bundle install bundle exec jekyll serve 执行完毕即可 感谢名单 Jekyll 官网 MSYS2 官网 Ruby 官网 USTC 开源镜像站</summary></entry><entry><title type="html">Spring学习之AOP</title><link href="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html" rel="alternate" type="text/html" title="Spring学习之AOP" /><published>2021-03-25T18:48:00+08:00</published><updated>2021-03-25T18:48:00+08:00</updated><id>http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP</id><content type="html" xml:base="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="windows" /><summary type="html">撰写缘由 笔者需要在Windows环境上顺利部署本人的GithubPage，以便对现阶段个人所拥有的技术能力做汇总提升。 准备工作 1 必备安装包(单击链接即可下载) ① RubyInstaller ② MSYS2 Installer 2 必备网站 ① MSYS 官网 ② MSYS2 国内源使用帮助 2 环境变量配置 安装ruby之后请将ruby安装文件夹下的bin文件夹添加至Windows系统环境变量的Path中。 3 后续完善步骤 ① 更改MSYS2为国内源，详情参考MYS2 国内源使用帮助。 ② 根据MSYS2 官网执行后续命令 ③ 将自己的githubpage项目克隆到本地，用自己喜欢的IDE打开，在终端中依次执行: gem install jekyll bundler bundle install bundle exec jekyll serve 执行完毕即可 感谢名单 Jekyll 官网 MSYS2 官网 Ruby 官网 USTC 开源镜像站</summary></entry><entry><title type="html">黑苹果折腾指南</title><link href="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html" rel="alternate" type="text/html" title="黑苹果折腾指南" /><published>2021-05-10T14:58:00+08:00</published><updated>2021-05-10T14:58:00+08:00</updated><id>http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97</id><content type="html" xml:base="http://sliencejoker.github.io/mac/2021/05/10/%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%8A%98%E8%85%BE%E6%8C%87%E5%8D%97.html">&lt;blockquote&gt;
+  &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+  &lt;p&gt;这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。&lt;br /&gt;&lt;/p&gt;
+  &lt;h3 id=&quot;具体实现&quot;&gt;具体实现&lt;/h3&gt;
+  &lt;p&gt;参考OpenCore黑果小兵的OC-little热补丁，以及github上与我机器型号相近的EFI配置，通过分析其DSDT文件发现，所谓电池电量信息显示不外就是在自己机器的DSDT.aml文件下EC作用域里添加B1B2 B1B4 RE1B RECB方法，对电池设备相关方法如GBIF、GBST、_BST、_BSF、_BIF等方法里的变量对高于8位以上的字节进行字节拆分和读取。&lt;/p&gt;
+  &lt;h3 id=&quot;thanks&quot;&gt;Thanks&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;https://blog.daliansky.net&quot;&gt;黑果小兵的部落阁&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://xstar-dev.github.io/hackintosh_advanced/Guide_For_Battery_Hotpatch.html&quot;&gt;XStar-Dev’s Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;以及其他开发黑苹果驱动的各类大神。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="mac" /><summary type="html">撰写缘由 这两天借鉴别人的黑苹果EFI配置文件，终于折腾出了一份属于自己的EFI，学会了给DSDT打补丁以便正确显示电池电量，故此记录一下。 具体实现 参考OpenCore黑果小兵的OC-little热补丁，以及github上与我机器型号相近的EFI配置，通过分析其DSDT文件发现，所谓电池电量信息显示不外就是在自己机器的DSDT.aml文件下EC作用域里添加B1B2 B1B4 RE1B RECB方法，对电池设备相关方法如GBIF、GBST、_BST、_BSF、_BIF等方法里的变量对高于8位以上的字节进行字节拆分和读取。 Thanks 黑果小兵的部落阁 XStar-Dev’s Blog 以及其他开发黑苹果驱动的各类大神。</summary></entry><entry><title type="html">Spring学习之AOP</title><link href="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html" rel="alternate" type="text/html" title="Spring学习之AOP" /><published>2021-03-25T18:48:00+08:00</published><updated>2021-03-25T18:48:00+08:00</updated><id>http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP</id><content type="html" xml:base="http://sliencejoker.github.io/java/2021/03/25/Spring%E5%AD%A6%E4%B9%A0%E4%B9%8BAOP.html">&lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
 &lt;blockquote&gt;
   &lt;p&gt;这两天在学Spring，关于AOP的学习上遇到了争论，差点打起来(笑)。故此记录一下。话不多说，进入正文。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -480,32 +556,4 @@ systemctl start redis &lt;br /&gt;&lt;/p&gt;
   &lt;p&gt;最后reboot你的Linux操作系统，启动后输入systemctl status redis命令查看redis是否开机自启动，当显示Active：active(running)时说明redis已经开机自启动。&lt;/p&gt;
   &lt;h1 id=&quot;note-2&quot;&gt;Note&lt;/h1&gt;
   &lt;p&gt;本次安装不足之处，redis-cli连接时需要进入到/usr/local/redis目录下，执行相关命令。若端口密码进行了修改，则进入redis安装目录下后，执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./bin/redis-cli -p 你的端口号 -a 你的密码&lt;/code&gt;进行连接，连接之后执行ping命令，若结果为PONG，说明正确连接redis服务。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由 这几天在安装redis的时候碰上不少坑，基于问题解决一次到位的原则结合网上各路大神的帖子终于找出Redis安装和服务化启动的最优解，特此记录一下，以备不时之需。 Note 本教程基于CentOS 7及以上版本安装，其他Linux发行版可以参考，未必当唯一标准进行指导。 话不多说，安装过程开始： Step1 安装前准备工作 由于笔者从一干二净的centOS Service无Gui版本开始进行安装，且以root身份登陆，故先安装编译必备的依赖make和gcc。 yum install make yum install gcc 通过以上命令成功安装编译redis所需依赖，非root用户安装过程中可能存在yum提示权限不足，只需要在命令之前追加sudo即可。 Step2 Redis安装包的下载解压及编译 参考Redis官网指导https://redis.io/download ，在linux终端中cd到你能记得住的一个文件夹下，最好是home文件夹下，然后执行相关命令，避免麻烦，贴上所需命令： cd /home wget https://download.redis.io/releases/redis-6.2.1.tar.gz tar xzf redis-6.2.1.tar.gz cd redis-6.2.1 make 接下来就是终端执行编译过程，最终会在redis-6.2.1文件夹下生成src文件夹，在该文件夹中存在redis服务启动必备的一些文件。 Step3 安装到指定位置 参考博文https://blog.csdn.net/simonforfuture/article/details/92801822贴上如下命令 安装到/usr/local/redis目录下 make PREFIX=/usr/local/redis install 拷贝配置文件 cp redis.conf /usr/local/redis/ Note 如有特殊需求，可以对redis.conf 文件进行适当修改，例如daemonize、databases、port等。 如需启用客户端连接redis时的密码，取消requirepass foobared该行的注释，并将foobared改为自己所需要的密码。 如需启用日志文件，找到logfile “” 行并将其更改为logfile “redis.log” ，这样redis会在运行时会生成日志文件。 如需更改默认6379端口，只需要找到port 6379行并将6379改为你所需要的端口。 Step4 服务化启动 参考redis如何设置开机自启动该文章，并提出如下补充事项 note_1:redis_init_script文件在redis tar.gz包解压缩后的文件夹中。 note_2:由于上述操作已将redis安装至/usr/local/redis/路径之下，故脚本文件的编辑中应做如下修改： 在#!/bin/sh下添加如下两行 # chkconfig: 2345 10 90 # description: Start and Stop redis 对照脚本文件中的内容，确保是下所示： REDISPORT=6379 此处请和你redis.conf文件中的端口号相匹配。 EXEC=/usr/local/redis/bin/redis-server CLIEXEC=/usr/local/redis/bin/redis-cli CONF=&quot;/usr/local/redis/redis.conf&quot; 上述三行为你执行安装到指定目录后的redis相关文件路径，redis-server用于启动redis服务，redis-cli文件用于建立redis客户端连接，redis.conf是redis服务启动的配置文件。 将redis添加至开机自启动 chkconfig –add redis chkconfig redis on 为确保redis启动，可继续执行如下命令 systemctl start redis Step5 重启并进行检查 最后reboot你的Linux操作系统，启动后输入systemctl status redis命令查看redis是否开机自启动，当显示Active：active(running)时说明redis已经开机自启动。 Note 本次安装不足之处，redis-cli连接时需要进入到/usr/local/redis目录下，执行相关命令。若端口密码进行了修改，则进入redis安装目录下后，执行./bin/redis-cli -p 你的端口号 -a 你的密码进行连接，连接之后执行ping命令，若结果为PONG，说明正确连接redis服务。</summary></entry><entry><title type="html">my-first-post</title><link href="http://sliencejoker.github.io/jekyll/2021/03/16/my-first-post.html" rel="alternate" type="text/html" title="my-first-post" /><published>2021-03-16T20:48:23+08:00</published><updated>2021-03-16T20:48:23+08:00</updated><id>http://sliencejoker.github.io/jekyll/2021/03/16/my-first-post</id><content type="html" xml:base="http://sliencejoker.github.io/jekyll/2021/03/16/my-first-post.html">&lt;h1 id=&quot;jekyll初次使用体验&quot;&gt;jekyll初次使用体验&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;跟着网上的教程乱七八糟的，终于搭好了自己的博客。
-感谢少数派的教程，感谢jekyllThemes大佬们的贡献，
-感谢jekyll官网的文档指点。
-在本次搭建博客的过程中，遇到了几个比较坑的问题，
-附上问题和解决办法。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;问题及解决办法&quot;&gt;问题及解决办法&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Q1:jekyll command not find&lt;br /&gt;
-A1:参考jekyll官网，给出的解决方案是：&lt;br /&gt;
-在终端环境配置文件中(example:zshrc)添加环境变量&lt;br /&gt;
-export GEM_HOME=$HOME/gems&lt;br /&gt;
-export PATH=$HOME/gems/bin:$PATH&lt;br /&gt;
-添加完成后重新执行gem install jekyll命令即可&lt;br /&gt;
-Q2:Error cannot load such file –webrick(LoadError)&lt;br /&gt;
-A2:在博客项目文件夹下执行命令bundle add webrick&lt;br /&gt;
-Q3：配置问题&lt;br /&gt;
-A3:这是个细心活，缺少相关依赖，终端中gem安装缺少的包，在博客模板项目配置文件中注意版本号相匹配&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;note&quot;&gt;Note&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;1.尽量避免sudo gem XXX 的方式&lt;br /&gt;
-2.参考清华大学开源镜像站更改ruby国内源，加快下载速度&lt;br /&gt;
-&lt;a&gt;https://mirrors.tuna.tsinghua.edu.cn/help/rubygems/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="jekyll" /><summary type="html">jekyll初次使用体验 跟着网上的教程乱七八糟的，终于搭好了自己的博客。 感谢少数派的教程，感谢jekyllThemes大佬们的贡献， 感谢jekyll官网的文档指点。 在本次搭建博客的过程中，遇到了几个比较坑的问题， 附上问题和解决办法。</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由 这几天在安装redis的时候碰上不少坑，基于问题解决一次到位的原则结合网上各路大神的帖子终于找出Redis安装和服务化启动的最优解，特此记录一下，以备不时之需。 Note 本教程基于CentOS 7及以上版本安装，其他Linux发行版可以参考，未必当唯一标准进行指导。 话不多说，安装过程开始： Step1 安装前准备工作 由于笔者从一干二净的centOS Service无Gui版本开始进行安装，且以root身份登陆，故先安装编译必备的依赖make和gcc。 yum install make yum install gcc 通过以上命令成功安装编译redis所需依赖，非root用户安装过程中可能存在yum提示权限不足，只需要在命令之前追加sudo即可。 Step2 Redis安装包的下载解压及编译 参考Redis官网指导https://redis.io/download ，在linux终端中cd到你能记得住的一个文件夹下，最好是home文件夹下，然后执行相关命令，避免麻烦，贴上所需命令： cd /home wget https://download.redis.io/releases/redis-6.2.1.tar.gz tar xzf redis-6.2.1.tar.gz cd redis-6.2.1 make 接下来就是终端执行编译过程，最终会在redis-6.2.1文件夹下生成src文件夹，在该文件夹中存在redis服务启动必备的一些文件。 Step3 安装到指定位置 参考博文https://blog.csdn.net/simonforfuture/article/details/92801822贴上如下命令 安装到/usr/local/redis目录下 make PREFIX=/usr/local/redis install 拷贝配置文件 cp redis.conf /usr/local/redis/ Note 如有特殊需求，可以对redis.conf 文件进行适当修改，例如daemonize、databases、port等。 如需启用客户端连接redis时的密码，取消requirepass foobared该行的注释，并将foobared改为自己所需要的密码。 如需启用日志文件，找到logfile “” 行并将其更改为logfile “redis.log” ，这样redis会在运行时会生成日志文件。 如需更改默认6379端口，只需要找到port 6379行并将6379改为你所需要的端口。 Step4 服务化启动 参考redis如何设置开机自启动该文章，并提出如下补充事项 note_1:redis_init_script文件在redis tar.gz包解压缩后的文件夹中。 note_2:由于上述操作已将redis安装至/usr/local/redis/路径之下，故脚本文件的编辑中应做如下修改： 在#!/bin/sh下添加如下两行 # chkconfig: 2345 10 90 # description: Start and Stop redis 对照脚本文件中的内容，确保是下所示： REDISPORT=6379 此处请和你redis.conf文件中的端口号相匹配。 EXEC=/usr/local/redis/bin/redis-server CLIEXEC=/usr/local/redis/bin/redis-cli CONF=&quot;/usr/local/redis/redis.conf&quot; 上述三行为你执行安装到指定目录后的redis相关文件路径，redis-server用于启动redis服务，redis-cli文件用于建立redis客户端连接，redis.conf是redis服务启动的配置文件。 将redis添加至开机自启动 chkconfig –add redis chkconfig redis on 为确保redis启动，可继续执行如下命令 systemctl start redis Step5 重启并进行检查 最后reboot你的Linux操作系统，启动后输入systemctl status redis命令查看redis是否开机自启动，当显示Active：active(running)时说明redis已经开机自启动。 Note 本次安装不足之处，redis-cli连接时需要进入到/usr/local/redis目录下，执行相关命令。若端口密码进行了修改，则进入redis安装目录下后，执行./bin/redis-cli -p 你的端口号 -a 你的密码进行连接，连接之后执行ping命令，若结果为PONG，说明正确连接redis服务。</summary></entry></feed>

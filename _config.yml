@@ -18,10 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Lucifer の Blog
+title: Aries の Blog
 email: 2036736521@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Themed by ejjoo
+  Themed by ejjoo <br />
+  Used by Joker丶阿楷
 # baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://sliencejoker.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: SlienceJoker
