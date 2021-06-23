@@ -44,7 +44,7 @@ category: linux
     cd tomcat-native-1.2.30<br>
     ./configure --with-ssl --with-apr=/usr/local/apr --with-java-home=/usr/local/jdk1.8.0_291<br>
     make && make install # 实现对tomcat-native的安装<br>
-    vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加
+    vim ~/.zshrc #添加环境变量，由于笔者默认使用zsh，故在此添加<br>
     export LD_LIBRARY_PATH=/usr/local/apr/lib:$LD_LIBRARY_PATH<br>
     source ~/.zshrc<br>
 >   - 2.3 重启tomcat服务，查看日志发现不再提示找不到基于APR的Apache Tomcat Native库，它可以在生产环境中实现最佳性能，大功告成。
