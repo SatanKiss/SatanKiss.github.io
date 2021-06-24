@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-23T10:16:08+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Aries の Blog</title><subtitle>Themed by ejjoo &lt;br /&gt; Used by Joker丶阿楷</subtitle><entry><title type="html">Tomcat基于APR的调优</title><link href="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html" rel="alternate" type="text/html" title="Tomcat基于APR的调优" /><published>2021-06-22T14:58:00+08:00</published><updated>2021-06-22T14:58:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="http://sliencejoker.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sliencejoker.github.io/" rel="alternate" type="text/html" /><updated>2021-06-24T13:26:07+08:00</updated><id>http://sliencejoker.github.io/feed.xml</id><title type="html">Aries の Blog</title><subtitle>Themed by ejjoo &lt;br /&gt; Used by Joker丶阿楷</subtitle><entry><title type="html">Linux常用软件推荐</title><link href="http://sliencejoker.github.io/linux/2021/06/24/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html" rel="alternate" type="text/html" title="Linux常用软件推荐" /><published>2021-06-24T11:00:00+08:00</published><updated>2021-06-24T11:00:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/06/24/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/06/24/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">&lt;blockquote&gt;
+  &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
+  &lt;p&gt;  作为一个将有限的生命浪费在无限的折腾事业中的折腾党，大学期间曾在自己的电脑上先后装过Windows系统(从预装的家庭版操作系统一路狂刷版本号，专业版、专业工作站版、服务器版、预览版)、Linux Debian系列的Ubuntu、Arch系列的Manjaro(疯狂切桌面环境，xfce、deepin、gnome以及后来Linux国产化圈里沸沸扬扬的UOS桌面环境都尝试过，也曾丧心病狂强转arch)、Linux RPM 系列的CentOS、基于Linux内核的安卓系统技德OS(RemixOS)、以及比较能提升逼格的Hackintosh(说人话就是黑苹果)，由于个人工作原因，有幸接触Linux银河麒麟操作系统。如今发现不论是什么操作系统，重要的是能拿来干活。折腾这么久，多多少少也有点自己的心得，故此汇总一下精简版的linux软件推荐。&lt;/p&gt;
+  &lt;h3 id=&quot;正文&quot;&gt;正文&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Ⅰ 普通用户推荐
+      &lt;ul&gt;
+        &lt;li&gt;此处普通用户是指没有折腾兴趣，只想开箱即用，不想浪费过多的精力研究Linux换源什么的，请移步国产化Linux操作系统统信UOS(前身为deepin)，或直接入正华为MateBook Linux预装版系列，需要什么软件只管去应用商店点点点就行了。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Ⅱ 折腾用户推荐
+      &lt;ul&gt;
+        &lt;li&gt;此处折腾用户主要是指业余时间丰富、精力旺盛的大学生(单身狗)，对Linux拥有足够的兴趣，愿意花费时间和精力进行研究，并立志于将Linux作为主力系统的群体。&lt;/li&gt;
+        &lt;li&gt;推荐系统：基于Arch系列的Manjaro&lt;/li&gt;
+        &lt;li&gt;推荐理由：安装方便快捷，aur社区资源丰富&lt;/li&gt;
+        &lt;li&gt;桌面环境：KDE&lt;/li&gt;
+        &lt;li&gt;必会技能：换源、添加aur源，开启yay支持，熟练使用pacman包管理命令。&lt;/li&gt;
+        &lt;li&gt;必备软件：
+          &lt;blockquote&gt;
+            &lt;p&gt;办公软件：WPS &lt;br /&gt;shell ：ohmyzsh &lt;br /&gt; 通讯社交：请yay -Ss spark，自行根据常见软件包名安装，星火出品还不错，基于deepin wine5打包，Bug较少，体验友好，具体啥软件我就不用多说了，反正腾讯出品的LinuxQQ真的就呵呵了。&lt;br /&gt; 影视音娱：网易云音乐Linux版(强推)、QQ音乐这个见仁见智、腾讯视频出的是一点诚意都没有，听技术大佬说就是网页重新打包了一下。&lt;br /&gt;游戏平台：Steam，如果你对你电脑性能足够自信，玩cs go还是可以的。Steam平台上的Linux游戏也有很多，我就不误人子弟了。&lt;br /&gt;虚拟机：VMware(老牌，激活方便，可配合github大神出品的unlocker补丁开启虚拟机安装Mac OS操作系统的支持)、vbox(开源)，如果特别追求软件的体验，推荐虚拟机装windows，在windows里跑你所需要的应用程序。如果真这样干了不得不给你竖个大拇指，真是令人窒息的套娃操作。&lt;br /&gt;开发编程：宇宙第一IDE vscode，一个账号，多端同步，你甚至可以用它来登QQ，什么编程语言都可以驾驭自如，只要你会玩，你能玩出花来。Eclipse开源免破解，IDEA自己想办法，或者可以将就着用社区版。&lt;br /&gt;思维导图：xmind、百度脑图(有网页版，是我个人认为百度家最良心的产品)&lt;br /&gt;解压缩：7z、unzip、360压缩 &lt;br /&gt;浏览器：微软的新版Edge、chrome、chromium、火狐firefox(前面三个浏览器都是基于chromium内核开发，个人更喜欢用微软，毕竟老windows用户了，账号同步啥的还是很方便的，请自行百度火狐浏览器彩蛋火狐之书，很养眼的，反正火狐谷歌打架打了这么多年，一个宇宙第一浏览器，一个地球第一浏览器) &lt;br /&gt; 视频网站推荐:小破站、AcFun，我用前者看鬼畜，看张三，看冰冰，刷技术视频，看洛天依，刷BML历届演唱会，我用后者看大长腿。A站的舞蹈区还是挺耐看的。&lt;/p&gt;
+          &lt;/blockquote&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Ⅲ 码农推荐
+      &lt;ul&gt;
+        &lt;li&gt;码农嘛，代码的搬运工(逃)，作为码农(社畜)可能是基于各种各样的工作原因不得不日常和Linux打交道，而Linux还不一定是带GUI的，我就不多哔哔赖赖了，就安利一下ohmyzsh，懂得都懂。如果因为特殊原因，Linux不允许联网，那就默认的bash凑合着用吧，善用alias别名，可以极大提升干活效率。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3 id=&quot;感谢&quot;&gt;感谢&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;arch wiki社区&lt;/li&gt;
+    &lt;li&gt;自己曾经荒废的大好时光&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由   作为一个将有限的生命浪费在无限的折腾事业中的折腾党，大学期间曾在自己的电脑上先后装过Windows系统(从预装的家庭版操作系统一路狂刷版本号，专业版、专业工作站版、服务器版、预览版)、Linux Debian系列的Ubuntu、Arch系列的Manjaro(疯狂切桌面环境，xfce、deepin、gnome以及后来Linux国产化圈里沸沸扬扬的UOS桌面环境都尝试过，也曾丧心病狂强转arch)、Linux RPM 系列的CentOS、基于Linux内核的安卓系统技德OS(RemixOS)、以及比较能提升逼格的Hackintosh(说人话就是黑苹果)，由于个人工作原因，有幸接触Linux银河麒麟操作系统。如今发现不论是什么操作系统，重要的是能拿来干活。折腾这么久，多多少少也有点自己的心得，故此汇总一下精简版的linux软件推荐。 正文 Ⅰ 普通用户推荐 此处普通用户是指没有折腾兴趣，只想开箱即用，不想浪费过多的精力研究Linux换源什么的，请移步国产化Linux操作系统统信UOS(前身为deepin)，或直接入正华为MateBook Linux预装版系列，需要什么软件只管去应用商店点点点就行了。 Ⅱ 折腾用户推荐 此处折腾用户主要是指业余时间丰富、精力旺盛的大学生(单身狗)，对Linux拥有足够的兴趣，愿意花费时间和精力进行研究，并立志于将Linux作为主力系统的群体。 推荐系统：基于Arch系列的Manjaro 推荐理由：安装方便快捷，aur社区资源丰富 桌面环境：KDE 必会技能：换源、添加aur源，开启yay支持，熟练使用pacman包管理命令。 必备软件： 办公软件：WPS shell ：ohmyzsh 通讯社交：请yay -Ss spark，自行根据常见软件包名安装，星火出品还不错，基于deepin wine5打包，Bug较少，体验友好，具体啥软件我就不用多说了，反正腾讯出品的LinuxQQ真的就呵呵了。 影视音娱：网易云音乐Linux版(强推)、QQ音乐这个见仁见智、腾讯视频出的是一点诚意都没有，听技术大佬说就是网页重新打包了一下。游戏平台：Steam，如果你对你电脑性能足够自信，玩cs go还是可以的。Steam平台上的Linux游戏也有很多，我就不误人子弟了。虚拟机：VMware(老牌，激活方便，可配合github大神出品的unlocker补丁开启虚拟机安装Mac OS操作系统的支持)、vbox(开源)，如果特别追求软件的体验，推荐虚拟机装windows，在windows里跑你所需要的应用程序。如果真这样干了不得不给你竖个大拇指，真是令人窒息的套娃操作。开发编程：宇宙第一IDE vscode，一个账号，多端同步，你甚至可以用它来登QQ，什么编程语言都可以驾驭自如，只要你会玩，你能玩出花来。Eclipse开源免破解，IDEA自己想办法，或者可以将就着用社区版。思维导图：xmind、百度脑图(有网页版，是我个人认为百度家最良心的产品)解压缩：7z、unzip、360压缩 浏览器：微软的新版Edge、chrome、chromium、火狐firefox(前面三个浏览器都是基于chromium内核开发，个人更喜欢用微软，毕竟老windows用户了，账号同步啥的还是很方便的，请自行百度火狐浏览器彩蛋火狐之书，很养眼的，反正火狐谷歌打架打了这么多年，一个宇宙第一浏览器，一个地球第一浏览器) 视频网站推荐:小破站、AcFun，我用前者看鬼畜，看张三，看冰冰，刷技术视频，看洛天依，刷BML历届演唱会，我用后者看大长腿。A站的舞蹈区还是挺耐看的。 Ⅲ 码农推荐 码农嘛，代码的搬运工(逃)，作为码农(社畜)可能是基于各种各样的工作原因不得不日常和Linux打交道，而Linux还不一定是带GUI的，我就不多哔哔赖赖了，就安利一下ohmyzsh，懂得都懂。如果因为特殊原因，Linux不允许联网，那就默认的bash凑合着用吧，善用alias别名，可以极大提升干活效率。 感谢 arch wiki社区 自己曾经荒废的大好时光</summary></entry><entry><title type="html">Tomcat基于APR的调优</title><link href="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html" rel="alternate" type="text/html" title="Tomcat基于APR的调优" /><published>2021-06-22T14:58:00+08:00</published><updated>2021-06-22T14:58:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/06/22/Tomcat%E5%9F%BA%E4%BA%8EAPR%E7%9A%84%E8%B0%83%E4%BC%98.html">&lt;blockquote&gt;
   &lt;h3 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h3&gt;
   &lt;p&gt;  笔者Java开发菜鸟一枚，由于项目基本使用Tomcat容器，部署过程中查看tomcat日志经常会发现warning提示开启APR，之前在mac操作系统上成功开启过，如今换用CentOS，需要重新部署一下，故此记录一下开启过程，避免以后需要的时候频繁去网上找轮子。&lt;/p&gt;
   &lt;h3 id=&quot;准备工作&quot;&gt;准备工作&lt;/h3&gt;
@@ -503,56 +539,4 @@ step5:导入你项目所需要的数据库，同时微调项目部分配置，�
   &lt;p&gt;取巧方法，直接干掉linux的防火墙服务，不可取。&lt;br /&gt;
 两种放开端口方法的区别：第一种命令如&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;firewall-cmd --zone=public --add-port=80/tcp --permanent&lt;/code&gt; ，这种开放端口命令的弊端是所有的ip都可以连接这个端口。第二种命令如步骤三的长命令，该命令的优势是指定ip访问端口，可以尽量避免服务器被攻击。&lt;/p&gt;
 
-&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由 一个正规的web项目部署，tomcat服务和mysql服务分别部署在不同的服务器上，由于自己的黑苹果操作系统无法传输，借用别人的电脑实操了一下项目部署，以便加深自己的印象。 准备工作 1.虚拟机centOS两台，分别装tomcat和mysql。 2.常用的查询命令，例如查ip，开端口，解压war包。 3.将自己的web项目打包成war包 假设条件 centOS虚拟机正常。 tomcat端口已经改为80 mysql端口默认3306 开始部署 step1.查询装有tomcat的虚拟机的ip，ip查询命令为ifconfig，记住该虚拟机的ip地址，格式为192.168.XXX.XXX。（这样的ip地址实际上为ipv4地址）。 step2. 开放tomcat服务与主机的连接。首先更改tomcat的端口，该配置文件是tomcat tar.gz包解压缩之后的文件夹里的conf文件夹下的server.xml。 其次放开80端口。执行命令firewall-cmd --zone=public --add-port=80/tcp --permanent ，然后重启防火墙服务，执行命令firewall-cmd --reload ，最后检查端口是否放开，执行命令firewall-cmd --query-port=80/tcp，确认端口已放行。最后启动tomcat服务，在主机上打开浏览器直接输入tomcat服务机的ip地址，验证是否可以和主机做连接。 step3:进入装有mysql的虚拟机，执行开放端口操作。 命令为：firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.XXX.XXX&quot; port protocol=&quot;tcp&quot; port=&quot;3306&quot; accept&quot; 后续重启防火墙服务和检查端口是否正常放行。 step4:用自己的方式将war包传输到装有tomcat的linux服务机上，假设tomcat解压缩的路径为/home/demo/tomcat，假设war包被你传输在了/home/demo/XXX.war，在终端中依次执行cd /home/demo，unzip XXX.war -d /home/demo/tomcat/webapps/XXX ，这样就成功解压缩war包。 step5:导入你项目所需要的数据库，同时微调项目部分配置，在浏览器上输入步骤一获取到的ip，对项目进行测试。 知识点 取巧方法，直接干掉linux的防火墙服务，不可取。 两种放开端口方法的区别：第一种命令如firewall-cmd --zone=public --add-port=80/tcp --permanent ，这种开放端口命令的弊端是所有的ip都可以连接这个端口。第二种命令如步骤三的长命令，该命令的优势是指定ip访问端口，可以尽量避免服务器被攻击。</summary></entry><entry><title type="html">Redis安装及服务化启动</title><link href="http://sliencejoker.github.io/linux/2021/03/17/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E6%9C%8D%E5%8A%A1%E5%8C%96%E5%90%AF%E5%8A%A8.html" rel="alternate" type="text/html" title="Redis安装及服务化启动" /><published>2021-03-17T18:00:00+08:00</published><updated>2021-03-17T18:00:00+08:00</updated><id>http://sliencejoker.github.io/linux/2021/03/17/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E6%9C%8D%E5%8A%A1%E5%8C%96%E5%90%AF%E5%8A%A8</id><content type="html" xml:base="http://sliencejoker.github.io/linux/2021/03/17/Redis%E5%AE%89%E8%A3%85%E5%8F%8A%E6%9C%8D%E5%8A%A1%E5%8C%96%E5%90%AF%E5%8A%A8.html">&lt;h1 id=&quot;撰写缘由&quot;&gt;撰写缘由&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;这几天在安装redis的时候碰上不少坑，基于问题解决一次到位的原则结合网上各路大神的帖子终于找出Redis安装和服务化启动的最优解，特此记录一下，以备不时之需。&lt;br /&gt;&lt;/p&gt;
-  &lt;h1 id=&quot;note&quot;&gt;Note&lt;/h1&gt;
-  &lt;p&gt;本教程基于CentOS 7及以上版本安装，其他Linux发行版可以参考，未必当唯一标准进行指导。&lt;br /&gt;
-话不多说，安装过程开始：&lt;/p&gt;
-  &lt;h3 id=&quot;step1-安装前准备工作&quot;&gt;Step1 安装前准备工作&lt;/h3&gt;
-  &lt;p&gt;由于笔者从一干二净的centOS Service无Gui版本开始进行安装，且以root身份登陆，故先安装编译必备的依赖make和gcc。&lt;br /&gt;
-yum install make&lt;br /&gt;
-yum install gcc&lt;br /&gt;
-通过以上命令成功安装编译redis所需依赖，非root用户安装过程中可能存在yum提示权限不足，只需要在命令之前追加sudo即可。&lt;/p&gt;
-  &lt;h3 id=&quot;step2-redis安装包的下载解压及编译&quot;&gt;Step2 Redis安装包的下载解压及编译&lt;/h3&gt;
-  &lt;p&gt;参考Redis官网指导&lt;a&gt;https://redis.io/download&lt;/a&gt; ，在linux终端中cd到你能记得住的一个文件夹下，最好是home文件夹下，然后执行相关命令，避免麻烦，贴上所需命令：&lt;br /&gt;
-cd /home &lt;br /&gt;
-wget https://download.redis.io/releases/redis-6.2.1.tar.gz &lt;br /&gt;
-tar xzf redis-6.2.1.tar.gz &lt;br /&gt;
-cd redis-6.2.1 &lt;br /&gt;
-make &lt;br /&gt;
-接下来就是终端执行编译过程，最终会在redis-6.2.1文件夹下生成src文件夹，在该文件夹中存在redis服务启动必备的一些文件。&lt;br /&gt;&lt;/p&gt;
-  &lt;h3 id=&quot;step3-安装到指定位置&quot;&gt;Step3 安装到指定位置&lt;/h3&gt;
-  &lt;p&gt;参考博文&lt;a&gt;https://blog.csdn.net/simonforfuture/article/details/92801822&lt;/a&gt;贴上如下命令&lt;br /&gt;
-安装到/usr/local/redis目录下 &lt;br /&gt;
-make PREFIX=/usr/local/redis install &lt;br /&gt;
-拷贝配置文件
-cp redis.conf /usr/local/redis/ &lt;br /&gt;&lt;/p&gt;
-  &lt;h3 id=&quot;note-1&quot;&gt;Note&lt;/h3&gt;
-  &lt;p&gt;如有特殊需求，可以对redis.conf 文件进行适当修改，例如daemonize、databases、port等。&lt;br /&gt;
-如需启用客户端连接redis时的密码，取消requirepass foobared该行的注释，并将foobared改为自己所需要的密码。&lt;br /&gt;
-如需启用日志文件，找到logfile “” 行并将其更改为logfile “redis.log” ，这样redis会在运行时会生成日志文件。&lt;br /&gt;
-如需更改默认6379端口，只需要找到port 6379行并将6379改为你所需要的端口。&lt;br /&gt;&lt;/p&gt;
-  &lt;h3 id=&quot;step4-服务化启动&quot;&gt;Step4 服务化启动&lt;/h3&gt;
-  &lt;p&gt;参考&lt;a href=&quot;https://www.php.cn/redis/458172.html&quot;&gt;redis如何设置开机自启动&lt;/a&gt;该文章，并提出如下补充事项&lt;br /&gt;
-note_1:redis_init_script文件在redis tar.gz包解压缩后的文件夹中。&lt;br /&gt;
-note_2:由于上述操作已将redis安装至/usr/local/redis/路径之下，故脚本文件的编辑中应做如下修改：&lt;br /&gt;
-在#!/bin/sh下添加如下两行&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# chkconfig: 2345 10 90&lt;/code&gt; &lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# description: Start and Stop redis&lt;/code&gt;&lt;br /&gt;
-对照脚本文件中的内容，确保是下所示：&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REDISPORT=6379&lt;/code&gt; 此处请和你redis.conf文件中的端口号相匹配。&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EXEC=/usr/local/redis/bin/redis-server&lt;/code&gt;&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLIEXEC=/usr/local/redis/bin/redis-cli&lt;/code&gt;&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CONF=&quot;/usr/local/redis/redis.conf&quot;&lt;/code&gt;&lt;br /&gt;
-上述三行为你执行安装到指定目录后的redis相关文件路径，redis-server用于启动redis服务，redis-cli文件用于建立redis客户端连接，redis.conf是redis服务启动的配置文件。&lt;br /&gt;
-将redis添加至开机自启动&lt;br /&gt;
-chkconfig –add redis&lt;br /&gt;
-chkconfig redis on&lt;br /&gt;
-为确保redis启动，可继续执行如下命令&lt;br /&gt;
-systemctl start redis &lt;br /&gt;&lt;/p&gt;
-  &lt;h3 id=&quot;step5-重启并进行检查&quot;&gt;Step5 重启并进行检查&lt;/h3&gt;
-  &lt;p&gt;最后reboot你的Linux操作系统，启动后输入systemctl status redis命令查看redis是否开机自启动，当显示Active：active(running)时说明redis已经开机自启动。&lt;/p&gt;
-  &lt;h1 id=&quot;note-2&quot;&gt;Note&lt;/h1&gt;
-  &lt;p&gt;本次安装不足之处，redis-cli连接时需要进入到/usr/local/redis目录下，执行相关命令。若端口密码进行了修改，则进入redis安装目录下后，执行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./bin/redis-cli -p 你的端口号 -a 你的密码&lt;/code&gt;进行连接，连接之后执行ping命令，若结果为PONG，说明正确连接redis服务。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由 这几天在安装redis的时候碰上不少坑，基于问题解决一次到位的原则结合网上各路大神的帖子终于找出Redis安装和服务化启动的最优解，特此记录一下，以备不时之需。 Note 本教程基于CentOS 7及以上版本安装，其他Linux发行版可以参考，未必当唯一标准进行指导。 话不多说，安装过程开始： Step1 安装前准备工作 由于笔者从一干二净的centOS Service无Gui版本开始进行安装，且以root身份登陆，故先安装编译必备的依赖make和gcc。 yum install make yum install gcc 通过以上命令成功安装编译redis所需依赖，非root用户安装过程中可能存在yum提示权限不足，只需要在命令之前追加sudo即可。 Step2 Redis安装包的下载解压及编译 参考Redis官网指导https://redis.io/download ，在linux终端中cd到你能记得住的一个文件夹下，最好是home文件夹下，然后执行相关命令，避免麻烦，贴上所需命令： cd /home wget https://download.redis.io/releases/redis-6.2.1.tar.gz tar xzf redis-6.2.1.tar.gz cd redis-6.2.1 make 接下来就是终端执行编译过程，最终会在redis-6.2.1文件夹下生成src文件夹，在该文件夹中存在redis服务启动必备的一些文件。 Step3 安装到指定位置 参考博文https://blog.csdn.net/simonforfuture/article/details/92801822贴上如下命令 安装到/usr/local/redis目录下 make PREFIX=/usr/local/redis install 拷贝配置文件 cp redis.conf /usr/local/redis/ Note 如有特殊需求，可以对redis.conf 文件进行适当修改，例如daemonize、databases、port等。 如需启用客户端连接redis时的密码，取消requirepass foobared该行的注释，并将foobared改为自己所需要的密码。 如需启用日志文件，找到logfile “” 行并将其更改为logfile “redis.log” ，这样redis会在运行时会生成日志文件。 如需更改默认6379端口，只需要找到port 6379行并将6379改为你所需要的端口。 Step4 服务化启动 参考redis如何设置开机自启动该文章，并提出如下补充事项 note_1:redis_init_script文件在redis tar.gz包解压缩后的文件夹中。 note_2:由于上述操作已将redis安装至/usr/local/redis/路径之下，故脚本文件的编辑中应做如下修改： 在#!/bin/sh下添加如下两行 # chkconfig: 2345 10 90 # description: Start and Stop redis 对照脚本文件中的内容，确保是下所示： REDISPORT=6379 此处请和你redis.conf文件中的端口号相匹配。 EXEC=/usr/local/redis/bin/redis-server CLIEXEC=/usr/local/redis/bin/redis-cli CONF=&quot;/usr/local/redis/redis.conf&quot; 上述三行为你执行安装到指定目录后的redis相关文件路径，redis-server用于启动redis服务，redis-cli文件用于建立redis客户端连接，redis.conf是redis服务启动的配置文件。 将redis添加至开机自启动 chkconfig –add redis chkconfig redis on 为确保redis启动，可继续执行如下命令 systemctl start redis Step5 重启并进行检查 最后reboot你的Linux操作系统，启动后输入systemctl status redis命令查看redis是否开机自启动，当显示Active：active(running)时说明redis已经开机自启动。 Note 本次安装不足之处，redis-cli连接时需要进入到/usr/local/redis目录下，执行相关命令。若端口密码进行了修改，则进入redis安装目录下后，执行./bin/redis-cli -p 你的端口号 -a 你的密码进行连接，连接之后执行ping命令，若结果为PONG，说明正确连接redis服务。</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name></name></author><category term="linux" /><summary type="html">撰写缘由 一个正规的web项目部署，tomcat服务和mysql服务分别部署在不同的服务器上，由于自己的黑苹果操作系统无法传输，借用别人的电脑实操了一下项目部署，以便加深自己的印象。 准备工作 1.虚拟机centOS两台，分别装tomcat和mysql。 2.常用的查询命令，例如查ip，开端口，解压war包。 3.将自己的web项目打包成war包 假设条件 centOS虚拟机正常。 tomcat端口已经改为80 mysql端口默认3306 开始部署 step1.查询装有tomcat的虚拟机的ip，ip查询命令为ifconfig，记住该虚拟机的ip地址，格式为192.168.XXX.XXX。（这样的ip地址实际上为ipv4地址）。 step2. 开放tomcat服务与主机的连接。首先更改tomcat的端口，该配置文件是tomcat tar.gz包解压缩之后的文件夹里的conf文件夹下的server.xml。 其次放开80端口。执行命令firewall-cmd --zone=public --add-port=80/tcp --permanent ，然后重启防火墙服务，执行命令firewall-cmd --reload ，最后检查端口是否放开，执行命令firewall-cmd --query-port=80/tcp，确认端口已放行。最后启动tomcat服务，在主机上打开浏览器直接输入tomcat服务机的ip地址，验证是否可以和主机做连接。 step3:进入装有mysql的虚拟机，执行开放端口操作。 命令为：firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.XXX.XXX&quot; port protocol=&quot;tcp&quot; port=&quot;3306&quot; accept&quot; 后续重启防火墙服务和检查端口是否正常放行。 step4:用自己的方式将war包传输到装有tomcat的linux服务机上，假设tomcat解压缩的路径为/home/demo/tomcat，假设war包被你传输在了/home/demo/XXX.war，在终端中依次执行cd /home/demo，unzip XXX.war -d /home/demo/tomcat/webapps/XXX ，这样就成功解压缩war包。 step5:导入你项目所需要的数据库，同时微调项目部分配置，在浏览器上输入步骤一获取到的ip，对项目进行测试。 知识点 取巧方法，直接干掉linux的防火墙服务，不可取。 两种放开端口方法的区别：第一种命令如firewall-cmd --zone=public --add-port=80/tcp --permanent ，这种开放端口命令的弊端是所有的ip都可以连接这个端口。第二种命令如步骤三的长命令，该命令的优势是指定ip访问端口，可以尽量避免服务器被攻击。</summary></entry></feed>
