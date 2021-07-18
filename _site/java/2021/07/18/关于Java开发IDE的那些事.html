@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link type="application/atom+xml" rel="alternate" href="http://sliencejoker.github.io/feed.xml" title="Aries の Blog" /></head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>Aries の Blog</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">Aries の Blog</a>
+	</div>
+	<p class="lead">Themed by ejjoo <br /> Used by Joker丶阿楷</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+      <li class="nav-title">Pages</li>
+	  <li>
+	  	<a class="nav-item" href="/">Articles</a>
+	  </li>
+	  
+	  
+	    
+	  
+	    
+	      
+	        <li>
+	        	<a class="nav-item" href="/about/">
+	            	About
+	            </a>
+	        </li>
+	      
+	    
+	  
+	    
+	      
+	    
+	  
+	    
+	  
+	    
+	  
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#jekyll">
+				<span class="name">jekyll</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#update">
+				<span class="name">update</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#linux">
+				<span class="name">linux</span>
+				<span class="badge">4</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#tips">
+				<span class="name">tips</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#windows">
+				<span class="name">windows</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#android">
+				<span class="name">android</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#java">
+				<span class="name">java</span>
+				<span class="badge">4</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#mac">
+				<span class="name">mac</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#life">
+				<span class="name">life</span>
+				<span class="badge">2</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div>
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			关于Java开发IDE的那些事
+		</div>
+		<time class="post-date dt-published" datetime="2021-07-18T19:00:00+08:00" itemprop="datePublished">2021/07/18
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<blockquote>
+  <h3 id="撰写缘由">撰写缘由</h3>
+  <p>  继续埋自己挖好的坑。有一句话怎么说，自己挖的坑，含着泪也要把这个坑填完。这句话不是鲁迅说的，也不是周树人说的，是我这个菜鸡说的。在上次提到的挖坑中我有说过本次开发拟使用Eclipse。为什么在IDEA盛行的当下，我仍然要选择Eclipse这款开发IDE作为主要开发工具呢？原因很简单，为了避免不必要的纠纷事件。毕竟Eclipse开源，而IDEA的话我又不习惯使用社区版，主要是嫌弃功能不全，故用个人学生邮箱激活了旗舰版。在国内，虽然说有很多种方式跳激活，我也曾装过破解版IDEA。但是不得不提，IDEA对激活封杀真的是很厉害。在培训班的时候有一次因为激活失效，IDEA打不开，故动了心思用学生邮箱嫖了JetBrains一年的服务。算算时间，离到期结束也没多久了，今年11月4号到期。工作起来，感觉时间过的还是蛮快的。那今天就唠唠我们开发人员所知道的IDE。</p>
+  <h3 id="java各类ide及其特性">Java各类IDE及其特性</h3>
+  <ul>
+    <li>NetBeans<br />
+  这个是JAVA相当老的IDE，笔者有幸在自己的黑苹果上装过一次。不好用，是相当不好用。给我的感觉是比记事本强不了多少。而且界面整体UI也不符合现在的一个审美。这里要提一嘴，这款IDE是Apache基金会开发出来的。我在后端开发做校验时用的的common-long3工具包，容器中间件tomcat等都是它家旗下的产品。</li>
+    <li>Eclipse<br />
+  这个就不用我多说了，也是开源IDE。现在仍然有不少大学教编程使用这款IDE。笔者曾刷了一下翁恺老师的JAVA课程，确实用的也是这个IDE。因为其开源特性，加上第三方开发者贡献的开源插件，Eclipse调配好了，其易用性不低于IDEA。笔者也曾混迹在一些技术群中，技术群里一个大佬直言公司调配的Eclipse是相当好用。起码在项目开发阶段的热部署方面，Eclipse比IDEA配置要略显方便。</li>
+    <li>IntelliJ IDEA<br />
+  Java IDE的后起之秀，分为社区版和旗舰版两类。社区版开源，但是功能不全。旗舰版的话个人使用破解随意，但是给公司干活的话最好还是得注意一下。现在笔者这博文陆陆续续的更新，其实就是用IDEA写的。确实用起来比较舒服。这个IDE应该是市面上Java最流行的IDE了。JetBrains他家的其他IDE也不差，比如有针对Python的PyCharm，有针对前端开发的WebStorm等等。</li>
+    <li>Visual Studio<br />
+  这个IDE，搞C#开发、dotNet开发的一般都知道，这个IDE可以说是宇宙最强IDE。如果你要把这个IDE里所有附加的功能全部装上的话，少说也得占用100G的硬盘存储空间。大而全，毕竟是Microsoft(巨硬)开发的。这个IDE当然也可以写java。</li>
+    <li>Visual Studio Code<br />
+  这个同样是微软推出来的一款产品，是轻量级IDE，简称vscode。这玩意在带GUI的操作系统中用来看某些文件的内容还是很方便的，像java源文件、xml文件、properties项目配置文件、json文件等等。我们做开发，免不了和这些东西打交道。在无GUI的操作系统中，查看源文件内容的方式就很多了，笔者曾经是nano党，后来用vim一开始不是很习惯，用了一段时间后发现手感什么的还可以。也有cat、less、tail等命令工具。这里夹带一下私货。有大佬开发出了vscode的qq插件。努力摸鱼，赚老板的钱，你懂我意思吧。</li>
+  </ul>
+
+  <h3 id="终">终</h3>
+  <p>  其实吧，IDE只是生产工具，真正使用生产工具的还是人。现在笔者决定新项目开坑Eclipse也只是加深一下对工具使用的熟练度而已。后续IDEA到期的话是要考虑上手社区版本了。你不能说使用IDEA开发的就一定比使用Eclipse开发的厉害，也不能说使用Eclipse开发的就一定比使用IDEA开发的弱鸡。技术能力的强弱都是看个人的。在老板眼里，他对你使用什么IDE开发可能并不在意，他在意的是你能不能完成既定的工作任务。</p>
+</blockquote>
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>
